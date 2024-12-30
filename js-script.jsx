@@ -50,6 +50,50 @@ function parseJSON(jsonString) {
     }
 }
 
+// Add this function after the parseJSON function
+function downloadImage(url, localPath) {
+    try {
+        // Create a Socket object
+        var socket = new Socket();
+        
+        // Extract hostname and path from URL
+        var urlParts = url.split('/');
+        var hostname = urlParts[2];
+        var path = '/' + urlParts.slice(3).join('/');
+        
+        // Connect to the server
+        if (socket.open(hostname + ':443', 'binary')) {
+            // Send HTTPS request
+            var request = 'GET ' + path + ' HTTP/1.1\r\n';
+            request += 'Host: ' + hostname + '\r\n';
+            request += 'Connection: close\r\n\r\n';
+            
+            socket.write(request);
+            
+            // Read response
+            var response = socket.read();
+            if (response) {
+                // Find the start of image data (after headers)
+                var imageStart = response.indexOf('\r\n\r\n') + 4;
+                var imageData = response.substr(imageStart);
+                
+                // Write to local file
+                var file = new File(localPath);
+                file.encoding = 'BINARY';
+                file.open('w');
+                file.write(imageData);
+                file.close();
+                
+                return true;
+            }
+        }
+        socket.close();
+    } catch (e) {
+        alert('Error downloading image: ' + e);
+    }
+    return false;
+}
+
 if (!jsonFilePath.exists) {
     alert("JSON QUIT FILE not found: " + jsonFilePath.fsName);
 }
@@ -183,17 +227,30 @@ if (filePath.exists) {
         for (var k = 0; k < page.rectangles.length; k++) {
             var rectangle = page.rectangles[k];
             if (rectangle.label) {
+                var imagePath = '';
                 if (rectangle.label === "{{Cover-Img}}") {
-                    rectangle.place(File(placeholderValues["{{Cover-Img}}"]));
-                    rectangle.fit(FitOptions.CONTENT_AWARE_FIT); // Apply content-aware fit
+                    imagePath = placeholderValues["{{Cover-Img}}"];
+                } else if (rectangle.label === "{{Index-Cover-Img-First}}" || 
+                           rectangle.label === "{{Index-Cover-Img-Second}}") {
+                    imagePath = placeholderValues["{{Extra-Img}}"];
                 }
-                else if (rectangle.label === "{{Index-Cover-Img-First}}") {
-                    rectangle.place(File(placeholderValues["{{Extra-Img}}"]));
-                    rectangle.fit(FitOptions.CONTENT_AWARE_FIT); // Apply content-aware fit
-                }
-                else if (rectangle.label === "{{Index-Cover-Img-Second}}") {
-                    rectangle.place(File(placeholderValues["{{Extra-Img}}"]));
-                    rectangle.fit(FitOptions.CONTENT_AWARE_FIT); // Apply content-aware fit
+                
+                if (imagePath) {
+                    // Check if it's a URL
+                    if (imagePath.indexOf('//images.ctfassets.net/') !== -1) {
+                        // Create a local temp file path
+                        var tempFile = new File(dirPath + '/' + rectangle.label.replace(/[{}]/g, '') + '.jpg');
+                        if (downloadImage(imagePath, tempFile.fsName)) {
+                            rectangle.place(tempFile);
+                            rectangle.fit(FitOptions.CONTENT_AWARE_FIT);
+                            // Clean up temp file
+                            tempFile.remove();
+                        }
+                    } else {
+                        // Handle local files as before
+                        rectangle.place(File(imagePath));
+                        rectangle.fit(FitOptions.CONTENT_AWARE_FIT);
+                    }
                 }
             }
         }
