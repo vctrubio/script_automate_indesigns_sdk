@@ -1,0 +1,609 @@
+{
+  "date": "30.12.24",
+  "entity": "properties",
+  "length": 12,
+  "properties": [
+    {
+      "Property-Url": "alaya",
+      "Cover-Img": [
+        "https://images.ctfassets.net/0nbi0p8gb167/3c6KEq7sLDKya3ispvCMEo/bc9485df0bec24671af5fb93af195bce/20240927_Ayala_45__Madrid_-1-LQ.jpg",
+        "https://images.ctfassets.net/0nbi0p8gb167/5csbnDNJ1GS2EaOnDstx6G/1fd4c00e6ed43f7f8fc58ef8a2b5b711/20240927_Ayala_45__Madrid_-5-LQ.jpg",
+        "https://images.ctfassets.net/0nbi0p8gb167/2J3c9BReRhDsx5kqnmNym9/58da4cb07b4eb4e6514148b18663bd76/20240927_Ayala_45__Madrid_-9-LQ.jpg",
+        "https://images.ctfassets.net/0nbi0p8gb167/5EH73O0YbOVC6ZG8zfPDSY/2cea766ca45ecf8df5200aa4f00f1145/20240927_Ayala_45__Madrid_-19-LQ.jpg",
+        "https://images.ctfassets.net/0nbi0p8gb167/2sCv8zao0SkWhrOPQRkWIR/cb726c7daf4b34baf503c3bfab7c2a08/20240927_Ayala_45__Madrid_-32-LQ.jpg",
+        "https://images.ctfassets.net/0nbi0p8gb167/CZyiR4xKajJMwakmMjP35/20a899abf43a8eed01282d8f3d170298/20240927_Ayala_45__Madrid_-31-LQ.jpg",
+        "https://images.ctfassets.net/0nbi0p8gb167/3NnyEVwk39gbLhw1107Z0/dd4cb6b5326fb6cb1d8b1002371f1602/20240927_Ayala_45__Madrid_-37-LQ.jpg",
+        "https://images.ctfassets.net/0nbi0p8gb167/01oNUwfjTi05cRIDLC4eum/7a08e1d0f5558d236d13ff92534c1a35/20240927_Ayala_45__Madrid_-23-LQ.jpg",
+        "https://images.ctfassets.net/0nbi0p8gb167/APgfQInmUErQzGlKDNbc9/f493807ceac945ab7ef1c673b973f7c4/20240927_Ayala_45__Madrid_-25-LQ.jpg",
+        "https://images.ctfassets.net/0nbi0p8gb167/2IDXyMvwE5eQt1y5ONpsnt/68a7f21129d38651436bf081a31c3f71/20240927_Ayala_45__Madrid_-30-LQ.jpg",
+        "https://images.ctfassets.net/0nbi0p8gb167/59VHJK0IfPGZVKujAv2DLE/8748e9e539bd1b98fd5d878a2720ece1/20240927_Ayala_45__Madrid_-59-LQ.jpg",
+        "https://images.ctfassets.net/0nbi0p8gb167/3HGtsmM5ze6RFnAP1Vk4aU/14ecce8a84187531f97e17d010f0ea14/20240927_Ayala_45__Madrid_-60-LQ.jpg"
+      ],
+      "Barrio": "Salamanca",
+      "Property": {
+        "Title": "Alaya Recoletos",
+        "Description": "__Exclusivo piso de lujo en Recoletos__\nImpecable y sofisticado piso recién rehabilitado con muebles modernos de alta calidad, situado en la 4ª planta de un edificio representativo en una tranquila calle del Barrio de Recoletos, a solo 5 minutos del Parque del Retiro.  \n\nCuenta con un amplio salón con balcones, comedor con acceso a terraza, cocina semi-abierta totalmente equipada, cuarto de lavandería y aseo de invitados. La zona de noche incluye 3 dormitorios en suite (el principal con vestidor y terraza privada), un despacho y una sala de TV. Un espacio único que combina elegancia, confort y ubicación privilegiada.  ",
+        "Price": {
+          "Price": "5850000",
+          "Ibis": "0",
+          "Precio Comunidad": "0"
+        }
+      },
+      "Amentities": {
+        "AC": true,
+        "Heating": true,
+        "Rooftop": false,
+        "Furnished": true,
+        "Portero": true,
+        "Trastero": true,
+        "Elevator": true,
+        "Parking": false
+      },
+      "Characteristics": {
+        "Tipo de Propiedad": "Residencial",
+        "Area de Estar": "323",
+        "Dormitorios": "3",
+        "Baños": "3",
+        "Patios": "1",
+        "Balcones": "2"
+      },
+      "Habitaciones-Paginas": [
+        {
+          "Title": "Dormitorios y Baños",
+          "Description": "",
+          "Photos": [
+            "//images.ctfassets.net/0nbi0p8gb167/3sacr8hhjfDYNWhEYAtlm8/3d9a98dbe5213436d1559fe24299a1b0/20240927_Ayala_45__Madrid_-54-LQ.jpg",
+            "//images.ctfassets.net/0nbi0p8gb167/48V6SQQNQ8ZVfQjrSSkgsT/e3b94b7b54776615a872ef56234d7d2c/20240927_Ayala_45__Madrid_-53-LQ.jpg",
+            "//images.ctfassets.net/0nbi0p8gb167/xIZNR6wGsfA78TkiZHAW8/4c30fc313a997d856379fe228e2b5806/20240927_Ayala_45__Madrid_-50-LQ.jpg",
+            "//images.ctfassets.net/0nbi0p8gb167/4w4iwgcpcy2ivY5pBUI9YQ/932ab722ca3d05793d56239690bfe326/20240927_Ayala_45__Madrid_-40-LQ.jpg",
+            "//images.ctfassets.net/0nbi0p8gb167/5KOdJK7rEiquvVJ81G5NY1/567782a78438b3551322ffe67fe62a5a/20240927_Ayala_45__Madrid_-45-LQ.jpg",
+            "//images.ctfassets.net/0nbi0p8gb167/7nbNKZ4EprERqRTYCgTqTz/6f996b132cf81838e85b7d6385cd7193/20240927_Ayala_45__Madrid_-41-LQ.jpg",
+            "//images.ctfassets.net/0nbi0p8gb167/7GdwzJEqExya8jw750w1Ym/9d4c51590f23b7c3e6d95c521dc7b041/20240927_Ayala_45__Madrid_-39-LQ.jpg"
+          ]
+        }
+      ]
+    },
+    {
+      "Property-Url": "san-mateo",
+      "Cover-Img": [
+        "https://images.ctfassets.net/0nbi0p8gb167/3Pc2M0CxjXEZ5DdjqsY1YP/737ae4ea416ec1cb60c01bfe5d17a031/WhatsApp_Image_2024-09-24_at_7.32.49_PM__1_.jpeg",
+        "https://images.ctfassets.net/0nbi0p8gb167/GxZdaBIIsrmZy30n8GnNM/759db5d852cbf1a8bf6992538fa0a420/WhatsApp_Image_2024-09-24_at_7.32.48_PM__1_.jpeg",
+        "https://images.ctfassets.net/0nbi0p8gb167/3WKfCHpAd7tF3eX3Jn0N0F/fb06b5ff2e344d1e7ef94e9bbe3eaa93/WhatsApp_Image_2024-09-24_at_7.32.49_PM.jpeg",
+        "https://images.ctfassets.net/0nbi0p8gb167/2XDoEVaBgrKSOqZLjPS2Ik/97798e09ccdbc7fe3bdb2e1fbe93a839/WhatsApp_Image_2024-09-24_at_7.32.49_PM__2_.jpeg",
+        "https://images.ctfassets.net/0nbi0p8gb167/4y1oKqTcmLZl012WGh98oT/ba9dd82f2228786c02fc9c574a2a3711/WhatsApp_Image_2024-09-24_at_7.32.48_PM.jpeg"
+      ],
+      "Barrio": "Justicia",
+      "Property": {
+        "Title": "San Mateo",
+        "Description": "Situado en un edificio clásico representativo, bien\nconservado en una bonita y tranquila calle del barrio de\n\nJusticia-chueca, con 2 fachadas a la calle (el salón-\ncomedor y dormitorio principal con vistas a un parque)\n\nestá espaciosa y luminosa vivienda está siendo rehabilitada\ncon calidez y diseño moderno pero conservando el\ncarácter señorial del edificio.\nSon 276 m2 completamente reformado llave en mano con\nsuelo de espiga de madera de roble, chimeneas\nrecuperadas, amplios patios de manzana, a/c por\nconductos, cocina completamente amueblada con\nelectrodomésticos de amplia gama, segunda planta muy\nalta.",
+        "Price": {
+          "Price": "2800000",
+          "Ibis": "0",
+          "Precio Comunidad": "0"
+        }
+      },
+      "Amentities": {
+        "AC": true,
+        "Heating": true,
+        "Rooftop": false,
+        "Furnished": true,
+        "Portero": false,
+        "Trastero": false,
+        "Elevator": true,
+        "Parking": false
+      },
+      "Characteristics": {
+        "Tipo de Propiedad": "Residencial",
+        "Area de Estar": "279",
+        "Dormitorios": "4",
+        "Baños": "4",
+        "Patios": "",
+        "Balcones": "4"
+      },
+      "Habitaciones-Paginas": [
+        {
+          "Title": "Dormitorios y Baños",
+          "Description": "La vivienda tiene 4 balcones, 4 dormitorios dobles en suite, 2 chimeneas, 4 baños,\nlavandería, aseo de invitados.\nLa distribución es la siguiente: amplio salón- comedor con 4 balcones a la calle,\ncocinasemiabierta completamente equipada, zona de lavandería y aseo de invitados. El\npasillo nos lleva a la zona de noche con 4 dormitorios dobles en suite y el principal con\nsu amplio vestidor y baño espacioso con ducha y bañera.",
+          "Photos": [
+            "//images.ctfassets.net/0nbi0p8gb167/63xXa7pL3MgnGWLQtoSRVl/5222c0d9ff7fcea5f62008943f7d0838/WhatsApp_Image_2024-09-24_at_7.32.50_PM__1_.jpeg",
+            "//images.ctfassets.net/0nbi0p8gb167/2GelnbbquoLKKRoJX9SE8T/7243eb1a33d6337dd9600d9d2e1b684e/WhatsApp_Image_2024-09-24_at_7.32.50_PM__5_.jpeg",
+            "//images.ctfassets.net/0nbi0p8gb167/33Me3eORJLbMUwVveTfB3P/52a8d02667b0ab7daa147a602467d2ec/WhatsApp_Image_2024-09-24_at_7.32.50_PM.jpeg",
+            "//images.ctfassets.net/0nbi0p8gb167/5ilJILRoIdpSND32K9u1ml/93fda5846eeca18b3cf6a1997071456e/WhatsApp_Image_2024-09-24_at_7.32.49_PM__5_.jpeg",
+            "//images.ctfassets.net/0nbi0p8gb167/3Fu69Lpjr4c9jDSb8X8JF6/f1ef5d7a0e2e671d52c7dafdb5bd06d2/WhatsApp_Image_2024-09-24_at_7.32.50_PM__2_.jpeg",
+            "//images.ctfassets.net/0nbi0p8gb167/3fvj5DjFsX56SELjc5iaiD/e1fe8ca4513edd2dd6ba87d3f61354a2/WhatsApp_Image_2024-09-24_at_7.32.51_PM__1_.jpeg",
+            "//images.ctfassets.net/0nbi0p8gb167/76dkJ3QAkBvfok0AdvIv5m/391200b5c9933ac8961cb425437afa43/WhatsApp_Image_2024-09-24_at_7.32.50_PM__4_.jpeg",
+            "//images.ctfassets.net/0nbi0p8gb167/3zNJLtmaC1qjVyWvZphLib/edb98c66f2bb678d9f8a79c8497ef4b6/WhatsApp_Image_2024-09-24_at_7.32.50_PM__3_.jpeg",
+            "//images.ctfassets.net/0nbi0p8gb167/3HEWAUddH1sKUwKiVNDAxO/a07c1b24a38d284b907efe99e3930f81/WhatsApp_Image_2024-09-24_at_7.32.49_PM__3_.jpeg",
+            "//images.ctfassets.net/0nbi0p8gb167/3KsciIDPX7jGQf8cmji7MH/a4ff87de77218045db33033863276a7f/WhatsApp_Image_2024-09-24_at_7.32.49_PM__4_.jpeg"
+          ]
+        }
+      ]
+    },
+    {
+      "Property-Url": "san-lorenzo",
+      "Cover-Img": [
+        "https://images.ctfassets.net/0nbi0p8gb167/3QtyzVzBr9gR5ukTLn8BsR/00ff0c06759a380e48a4543ec3406dee/WhatsApp_Image_2024-09-24_at_8.11.54_PM__1_.jpeg",
+        "https://images.ctfassets.net/0nbi0p8gb167/1P1CSvPS7jphColK2QbzCD/0a02b1c4e5b4e0fc7631bac3e6f0b88b/WhatsApp_Image_2024-09-24_at_8.11.53_PM__4_.jpeg",
+        "https://images.ctfassets.net/0nbi0p8gb167/2jOUMK94dmqLlxSrqYpGZ/2d84e5bdd7548f21ac87603e71c2d5fa/WhatsApp_Image_2024-09-24_at_8.11.53_PM__1_.jpeg"
+      ],
+      "Barrio": "Justicia",
+      "Property": {
+        "Title": "San Lorenzo",
+        "Description": "Esta luminosa vivienda, situada en la cuarta planta de un\nespectacular edificio de 1910 con entrada de carruajes y\npatio ajardinado, situado en una calle bonita y tranquila\ndel prestigioso barrio de Justicia-Chueca. La vivienda\nestá siendo complemente rehabilitada, con estilo\nmoderno pero sofisticado para convertirla en un\nexclusivo piso familiar pero sin perder el carácter clásico\ndel edificio. La vivienda cuenta con sistema de a/c por\nconductos, calefacción por gas natural, suelo de madera\nde roble, electrodomésticos alemanes, techos de 5 m de\naltura y todo lo que el más exquisito cliente pueda\ndesear para convertir esta vivienda en su hogar.",
+        "Price": {
+          "Price": "3000000",
+          "Ibis": "0",
+          "Precio Comunidad": "0"
+        }
+      },
+      "Amentities": {
+        "AC": true,
+        "Heating": true,
+        "Rooftop": false,
+        "Furnished": true,
+        "Portero": true,
+        "Trastero": false,
+        "Elevator": true,
+        "Parking": false
+      },
+      "Characteristics": {
+        "Tipo de Propiedad": "Residencial",
+        "Area de Estar": "220",
+        "Dormitorios": "3",
+        "Baños": "3",
+        "Patios": "",
+        "Balcones": "1"
+      },
+      "Habitaciones-Paginas": [
+        {
+          "Title": "Dormitorios y Baños",
+          "Description": "Tienes 3 dormitorios dobles con baños en suite, garantizando privacidad\ny comodidad para todos los residentes. Todos los dormitorios han sido\ndiseñados para ofrecer un refugio tranquilo y lujoso, combinando\ncomodidad y estilo en cada detalle.",
+          "Photos": [
+            "//images.ctfassets.net/0nbi0p8gb167/4PPHOX9uircMYzBIFUETSx/191c72ca5a932c68323e937ad7936ab6/WhatsApp_Image_2024-09-24_at_8.11.53_PM.jpeg",
+            "//images.ctfassets.net/0nbi0p8gb167/118ZYRowRLyWz0tqZKIuot/84dc25c32e3fd455589183893c656dbc/WhatsApp_Image_2024-09-24_at_8.11.53_PM__2_.jpeg",
+            "//images.ctfassets.net/0nbi0p8gb167/zVqADUHKxWLYoELoeZVg7/ee67c04ce6b4f6a53f65c58fc5182c7b/WhatsApp_Image_2024-09-24_at_8.11.54_PM.jpeg"
+          ]
+        }
+      ]
+    },
+    {
+      "Property-Url": "piso-hermosilla",
+      "Cover-Img": [
+        "https://images.ctfassets.net/0nbi0p8gb167/2Mhenc7j2u6NM9EWbGGzkb/05c35d4a7550d34a095be435368587d4/PHOTO-2024-04-05-12-11-59_6_.jpg",
+        "https://images.ctfassets.net/0nbi0p8gb167/2MfrOEJhY74bsQxbvHqhGW/aeb8df1282ecd8f5cf4432bd8db4f0dc/PHOTO-2024-04-05-12-12-00_1_.jpg",
+        "https://images.ctfassets.net/0nbi0p8gb167/22M7DpQ4P45wFRhfECZZQh/e81e85ba77d1b9f1a7f897a1fd0b3163/PHOTO-2024-04-05-12-12-00_3_.jpg",
+        "https://images.ctfassets.net/0nbi0p8gb167/6AsapWEYL2xfbSHX0XMEFl/b2b5b04c0d078b7b261682d549d9b748/PHOTO-2024-04-05-12-12-00_4_.jpg",
+        "https://images.ctfassets.net/0nbi0p8gb167/5ilJzWar183F8qBCZlDFxV/113afa6deffbaa3701bf873a0b515828/PHOTO-2024-04-05-12-12-00_2_.jpg",
+        "https://images.ctfassets.net/0nbi0p8gb167/54NUnKyKbvVIA1H5TWklV/3af4da7147f4fda3aab5dd95a62e85d7/PHOTO-2024-04-05-12-11-59_9_.jpg",
+        "https://images.ctfassets.net/0nbi0p8gb167/3YoX7ftwRNo9t6CRnismnC/8f105c4b5cd736145c9dc838f0c59e6a/PHOTO-2024-04-05-12-11-59.jpg",
+        "https://images.ctfassets.net/0nbi0p8gb167/72RE6fIorBjLN9K3JWBqRB/8c16bc006a36f28c0f66aea6166436bc/PHOTO-2024-04-05-12-11-59_5_.jpg"
+      ],
+      "Barrio": "Salamanca",
+      "Property": {
+        "Title": "Piso Hermosilla",
+        "Description": "Ubicado en el exclusivo barrio de Recoletos, a escasos pasos\ndel icónico Paseo de la Castellana, este elegante piso de 221\nm2, situado en una tercera planta, ha sido meticulosamente\nreformado para satisfacer los más altos estándares de calidad.\nDestacan sus acabados premium como el suelo de roble natural\ny una moderna cocina equipada con electrodomésticos Miele de\núltima generación. La distribución es impecable: un amplio hall\nde entrada con armario gabanero da paso a un luminoso y\nespacioso salón-comedor con cocina integrada, donde los\ngrandes ventanales inundan el espacio de luz natural. Cuenta\nademás con un aseo de cortesía y una práctica zona de\nlavandería.\nLa zona de descanso ofrece tres amplios dormitorios dobles,\ntodos ellos en suite, diseñados para maximizar el confort y la\nprivacidad. Cada rincón de esta vivienda está pensado para\nproporcionar una experiencia de lujo y bienestar en pleno\ncorazón de Madrid.",
+        "Price": {
+          "Price": "3950000",
+          "Ibis": "2300",
+          "Precio Comunidad": "231"
+        }
+      },
+      "Amentities": {
+        "AC": true,
+        "Heating": true,
+        "Rooftop": false,
+        "Furnished": true,
+        "Portero": true,
+        "Trastero": true,
+        "Elevator": false,
+        "Parking": false
+      },
+      "Characteristics": {
+        "Tipo de Propiedad": "Residencial",
+        "Area de Estar": "221",
+        "Dormitorios": "3",
+        "Baños": "3",
+        "Patios": "",
+        "Balcones": ""
+      },
+      "Habitaciones-Paginas": [
+        {
+          "Title": "Dormitorios y Baños",
+          "Description": "",
+          "Photos": [
+            "//images.ctfassets.net/0nbi0p8gb167/1ZdmTOrpeJYxrL1siTXPRF/8883e366da5ebaf9fefc4cffd4f38f91/PHOTO-2024-04-05-12-11-59_8_.jpg",
+            "//images.ctfassets.net/0nbi0p8gb167/3WAtQbFq6oerdYVZPLDj54/72f8d1957c0a5450477f3387599349f2/PHOTO-2024-04-05-12-12-00_5_.jpg",
+            "//images.ctfassets.net/0nbi0p8gb167/5AhIJw4UsPb0O61BuFJuPX/5f5e53cc406a17bf71320edd77bc1fdb/PHOTO-2024-04-05-12-11-59_7_.jpg",
+            "//images.ctfassets.net/0nbi0p8gb167/2vjq9laKfkuCiZVnONxDAe/bfc4f387a0eabf4d03796d6dcfd989b6/PHOTO-2024-04-05-12-11-59_4_.jpg",
+            "//images.ctfassets.net/0nbi0p8gb167/4FUmJzLxE3AWxoQpFjaRJD/c0df6f22c522a3e2b5db4b0bc60a4e01/PHOTO-2024-04-05-12-11-59_1_.jpg"
+          ]
+        }
+      ]
+    },
+    {
+      "Property-Url": "san-gregorio",
+      "Cover-Img": [
+        "https://images.ctfassets.net/0nbi0p8gb167/HhqWo556ocl4iRXjQJzWu/ad69524083f40e1fae728e42a1cbfdfa/3._Living_1_er_piso_1.jpg",
+        "https://images.ctfassets.net/0nbi0p8gb167/20foIkUN3NquIpTXBAkUdu/71860c12127a0fdd34b992408827190c/1._Hall_de_entrada_1_er_piso_1.jpg",
+        "https://images.ctfassets.net/0nbi0p8gb167/k0JeRJiV35Nklk11mx4vV/3870271ed913a63179810fdab5920e93/2._Sector_lectura_1_er_piso_1_.jpg",
+        "https://images.ctfassets.net/0nbi0p8gb167/5HBUwU5V8QPFHwZCeaNY6O/d755674a6a392189b09f1913a5d99f9c/7._Playroom_1_er_piso.jpg",
+        "https://images.ctfassets.net/0nbi0p8gb167/RA2KzP4sUfv2YguGz0VR0/e1337978c46196343771bd135b2d7ec6/5._Cocina_1_er_piso_1_.jpg",
+        "https://images.ctfassets.net/0nbi0p8gb167/1AyKONtXYRYgmGW8M8Bbxm/110f109251dbf0b480fa35077cbb5347/4._Comedor_1_er_piso.jpg"
+      ],
+      "Barrio": "Justicia",
+      "Property": {
+        "Title": "San Gregorio",
+        "Description": "Ubicado en la tranquila y prestigiosa calle San Gregorio,\neste piso señorial se encuentra en un edificio clásico de\n1900. Actualmente en fase de remodelación total, esta\nvivienda combina calidad y diseño moderno, manteniendo\nel espíritu clásico del edificio. La fecha de entrega\nprevista es Noviembre 2024, ofreciendo la oportunidad\nde personalizarlo al gusto del cliente. Con una superficie\nde 180 m2, esta propiedad es una joya en el corazón de\nJusticia-Chueca. El edificio, con su fachada clásica\nprotegida, escalera de madera original y ascensor de\nreja, está bien mantenido, preservando su encanto\nhistórico. Esta propiedad, con su combinación de\nmodernidad y carácter clásico, es una oportunidad única\npara vivir en una de las zonas más exclusivas de Madrid.",
+        "Price": {
+          "Price": "2350000",
+          "Ibis": "0",
+          "Precio Comunidad": "0"
+        }
+      },
+      "Amentities": {
+        "AC": true,
+        "Heating": true,
+        "Rooftop": false,
+        "Furnished": false,
+        "Portero": false,
+        "Trastero": false,
+        "Elevator": true,
+        "Parking": false
+      },
+      "Characteristics": {
+        "Tipo de Propiedad": "Residencial",
+        "Area de Estar": "180",
+        "Dormitorios": "3",
+        "Baños": "2",
+        "Patios": "",
+        "Balcones": "3"
+      },
+      "Habitaciones-Paginas": [
+        {
+          "Title": "Dormitorios y Baños",
+          "Description": "La zona de noche incluye 3 dormitorios dobles. El dormitorio\nprincipal, en suite, ofrece un espacio privado y lujoso. Los otros\ndos dormitorios comparten un baño en suite, asegurando\ncomodidad y privacidad para todos los residentes. Además, hay un\ncuarto de TV, que puede ser utilizado como un espacio adicional para el entretenimiento o el descanso.",
+          "Photos": [
+            "//images.ctfassets.net/0nbi0p8gb167/2hawkzHmIiIKu4IFixtOEp/64dc1509232f1462115416f9b238ab58/9._Cuarto_principal_1.jpg",
+            "//images.ctfassets.net/0nbi0p8gb167/3U3GCxvdVHvRSgA8Cg31SH/659c0f92f9a90953e4f458b9e7b49f53/13._Ban_o_principal.jpg",
+            "//images.ctfassets.net/0nbi0p8gb167/p76IEoRe1lOWqwQQY5OGx/41a584017d9d73aae8ef47fe8358f1ee/10._Dormitorio_II.jpg",
+            "//images.ctfassets.net/0nbi0p8gb167/71fhbjVrVVtFQUBTUEydcQ/1780b58cf8d3cb5e2cfa714d08db607c/11._Dormitorio_2_-_1_er_piso_y_PB.jpg",
+            "//images.ctfassets.net/0nbi0p8gb167/1kRjAx0aUtZw3IOviJzw3A/55d8de61fdeb6019c46f0d386b4c95d8/12._Ban_o_2.jpg"
+          ]
+        }
+      ]
+    },
+    {
+      "Property-Url": "lagasca-salamanca",
+      "Cover-Img": [
+        "https://images.ctfassets.net/0nbi0p8gb167/1HuyXKkBKhU6loJrCKDVCe/2448bafaf733bc755161bf94ffee2ae9/WhatsApp_Image_2024-09-24_at_8.12.46_PM.jpeg",
+        "https://images.ctfassets.net/0nbi0p8gb167/1JS0NNsMz9VrrF9eiOdaOU/e3222794e5baefddceaa47edb477f73c/WhatsApp_Image_2024-09-24_at_8.12.45_PM__2_.jpeg",
+        "https://images.ctfassets.net/0nbi0p8gb167/4eNB5r7EYBRSxkaMkxbB9T/f7c14a51843f76b8d0b4462b292b20ed/WhatsApp_Image_2024-09-24_at_8.12.51_PM__3_.jpeg",
+        "https://images.ctfassets.net/0nbi0p8gb167/2u1nf9XkEYY5M8vqxI2vqU/79799ad2c98e82cae7fd4f72d5d35e7a/WhatsApp_Image_2024-09-24_at_8.12.48_PM__5_.jpeg"
+      ],
+      "Barrio": "Salamanca",
+      "Property": {
+        "Title": "Lagasca Salamanca",
+        "Description": "Piso de 92 m2 situado en un elegante edificio de la calle\nLagasca, una de las vías más apacibles del distinguido\nbarrio de Salamanca. Este encantador apartamento se\nubica en la séptima planta y cuenta con techos de 5\nmetros de altura, creando una sensación de amplitud y\nluminosidad excepcionales. La distribución interior consta\nde una cocina integrada con salón comedor, un dormitorio\nprincipal en suite con vestidor y un segundo dormitorio\nacompañado de otro baño completo.\nEsta residencia ha sido renovada con materiales de alta\ncalidad y un exquisito diseño, ofreciendo un ambiente\nmoderno y acogedor. Se vende completamente amueblada,\nproporcionando una oportunidad única para aquellos que\nbuscan adquirir una propiedad lista para habitar.",
+        "Price": {
+          "Price": "1100000",
+          "Ibis": "0",
+          "Precio Comunidad": "0"
+        }
+      },
+      "Amentities": {
+        "AC": true,
+        "Heating": true,
+        "Rooftop": false,
+        "Furnished": true,
+        "Portero": true,
+        "Trastero": false,
+        "Elevator": true,
+        "Parking": false
+      },
+      "Characteristics": {
+        "Tipo de Propiedad": "Residencial",
+        "Area de Estar": "92",
+        "Dormitorios": "2",
+        "Baños": "2",
+        "Patios": "",
+        "Balcones": "2"
+      },
+      "Habitaciones-Paginas": [
+        {
+          "Title": "Dormitorios y Baños",
+          "Description": "El dormitorio principal, en suite, es un espacio acogedor y\nprivado donde los propietarios pueden retirarse para\ndescansar y relajarse. Además de contar con un baño\ncompleto incorporado, este dormitorio está equipado con un\namplio vestidor que proporciona espacio de almacenamiento\nadicional y añade un toque de lujo al espacio.\nEl segundo dormitorio, pensado como una habitación de\ninvitados versátil, también puede adaptarse fácilmente para su\nuso como despacho u oficina en casa.",
+          "Photos": [
+            "//images.ctfassets.net/0nbi0p8gb167/62KZQwRSQ6uAQWxbS0QgF2/8020f5c4f9da735f7a84e56de6d6463c/WhatsApp_Image_2024-09-24_at_8.12.51_PM__1_.jpeg",
+            "//images.ctfassets.net/0nbi0p8gb167/1jwIrjHH904HGI7K63QsO0/4c677388979598fec43d799efbf543d4/WhatsApp_Image_2024-09-24_at_8.12.47_PM__2_.jpeg",
+            "//images.ctfassets.net/0nbi0p8gb167/3cDauXOoA1eppC2csKEF25/2be2d66915a7ff5fc4a8ca0939c1842f/WhatsApp_Image_2024-09-24_at_8.12.47_PM__3_.jpeg",
+            "//images.ctfassets.net/0nbi0p8gb167/3oUI2aKRd04NCpFZ3jN0U6/81f11b34353d9c8594a254a0db897229/WhatsApp_Image_2024-09-24_at_8.12.46_PM__2_.jpeg",
+            "//images.ctfassets.net/0nbi0p8gb167/3YxtduxO7Bl08FLhSPmweE/4e1f07f0c5171ece886162ae56253923/WhatsApp_Image_2024-09-24_at_8.12.46_PM__6_.jpeg",
+            "//images.ctfassets.net/0nbi0p8gb167/7mmTQ7rs1BNwwpfjKJI6s9/ddf7bb7b2b50056fee9ea4531d2fd251/WhatsApp_Image_2024-09-24_at_8.12.46_PM__5_.jpeg"
+          ]
+        }
+      ]
+    },
+    {
+      "Property-Url": "argonsola",
+      "Cover-Img": [
+        "https://images.ctfassets.net/0nbi0p8gb167/1V5izuB2e5dOer1sEB3oLM/0c4ccfb1e0713bdc315a1c0421f99226/PHOTO-2024-07-31-12-16-42.jpg",
+        "https://images.ctfassets.net/0nbi0p8gb167/7b7y1kpcQ63yshwbKNUF2G/26569b88a12a1bb0aabbf289823a997d/PHOTO-2024-07-31-12-16-41__1_.jpg",
+        "https://images.ctfassets.net/0nbi0p8gb167/22pFaZrBLszup4qrUKNgtF/dafc996489aacceb4469ce9e69b7fe43/PHOTO-2024-07-31-12-16-41.jpg",
+        "https://images.ctfassets.net/0nbi0p8gb167/7fU7zCJtXwUaKOrURafb8Y/c2398f87923fd470a0fcc8a43bf5057b/PHOTO-2024-07-31-12-16-42__1_.jpg",
+        "https://images.ctfassets.net/0nbi0p8gb167/1oLN77LuXeBKgE0KBLOWvT/9fcfb8abe6d1bbd21956d3f0e5cf59d7/PHOTO-2024-07-31-12-16-41__2_.jpg"
+      ],
+      "Barrio": "Justicia",
+      "Property": {
+        "Title": "Argonsola",
+        "Description": "Situado en la segunda planta de un edificio señorial, \nCon 5 balcones a la calle y amplios patios de manzana, tenemos este piso de 361 m2, solo un piso por planta, para reforma total según sus necesidades.\nPrecio de venta demolido: 4.100.000€\n",
+        "Price": {
+          "Price": "4100000",
+          "Ibis": "0",
+          "Precio Comunidad": "0"
+        }
+      },
+      "Amentities": {},
+      "Characteristics": {
+        "Tipo de Propiedad": "Residencial",
+        "Area de Estar": "361",
+        "Dormitorios": "4",
+        "Baños": "4",
+        "Patios": "4",
+        "Balcones": "5"
+      },
+      "Habitaciones-Paginas": []
+    },
+    {
+      "Property-Url": "attico-hermosilla",
+      "Cover-Img": [
+        "https://images.ctfassets.net/0nbi0p8gb167/2ZX6lf1e5pQ3I8OKzZI7IF/5b46615fc9073af73537c35716186e88/PHOTO-2024-09-16-10-11-15_1_.jpg",
+        "https://images.ctfassets.net/0nbi0p8gb167/1qZvcd4m6kcY1JzZ67uY23/1c26d5eabfdb56c5a62457534a4c4865/PHOTO-2024-09-16-10-11-16_4_.jpg",
+        "https://images.ctfassets.net/0nbi0p8gb167/39OFzoP9Xnz4RJIYXFR451/3535ed6b307ca066fc9d604db0d15dfd/PHOTO-2024-09-16-10-11-15_2_.jpg",
+        "https://images.ctfassets.net/0nbi0p8gb167/3Rnk6Tf8a0X0bZCRK9RtPz/bed1fdd78ac706d9b3fc499b782fcd15/PHOTO-2024-09-16-10-11-16_9_.jpg",
+        "https://images.ctfassets.net/0nbi0p8gb167/QlxhicfJrOPDHrdzdRsTg/484dc9ee6692cf892d1f008a116490db/PHOTO-2024-09-16-10-11-16_7_.jpg",
+        "https://images.ctfassets.net/0nbi0p8gb167/2EyOlZaHRqH9odUM93jzQr/f3af2f9b455262ea7d9408973ef10f98/PHOTO-2024-09-16-10-11-16_8_.jpg",
+        "https://images.ctfassets.net/0nbi0p8gb167/4wlMuinIsfZBFsgCRewXlR/f2a54438b20c62792959c73583be984a/PHOTO-2024-09-16-10-11-17_3_.jpg",
+        "https://images.ctfassets.net/0nbi0p8gb167/7xb6btkBV0P8XHOSa3bMje/4ade249b637ef4b9a33b9c5a4e539a4e/PHOTO-2024-09-16-10-11-17_1_.jpg"
+      ],
+      "Barrio": "Salamanca",
+      "Property": {
+        "Title": "Attico Hermosilla",
+        "Description": "Situado en un edificio clásico, bien mantenido, disponiendo de ascensor y portero, en esta tranquila calle del Barrio Salamanca, al lado del Mandarin Oriental Residence, este exclusivo ático es todo lo que una familia puede desear.\nCon 248 m2 de vivienda y 50 m2 de terraza, lleno de luz natural al tener orientación sur, este ático ha sido reformado completamente y amueblado con la máxima calidad y estilo moderno, pero manteniendo el estilo señorial del edificio.\nLa distribución es la siguiente: amplio hall de entrada que nos lleva a la zona de salón-comedor con acceso a la espaciosa terraza con plantas naturales y riego automático.\nLa vivienda dispone de aire acondicionado por conductos y calefacción central por gas natural, suelo de madera de roble, techos altos con moldura, cocina completamente amueblada y acondicionada con electrodomésticos de alta gama europeos.",
+        "Price": {
+          "Price": "5400000",
+          "Ibis": "1900",
+          "Precio Comunidad": "360"
+        }
+      },
+      "Amentities": {
+        "AC": true,
+        "Heating": true,
+        "Rooftop": true,
+        "Furnished": false,
+        "Portero": true,
+        "Trastero": false,
+        "Elevator": true,
+        "Parking": false
+      },
+      "Characteristics": {
+        "Tipo de Propiedad": "Residencial",
+        "Area de Estar": "248",
+        "Dormitorios": "3",
+        "Baños": "3",
+        "Patios": "1",
+        "Balcones": ""
+      },
+      "Habitaciones-Paginas": [
+        {
+          "Title": "Dormitorios y Baños",
+          "Description": "La zona de noche se compone de 3 amplios dormitorios dobles en suite con vestidor.",
+          "Photos": [
+            "//images.ctfassets.net/0nbi0p8gb167/52n60BXMziUXpST1WGwbK6/7d2c4fd3348fd886f7df00287b7a92b4/PHOTO-2024-09-16-10-11-17_8_.jpg",
+            "//images.ctfassets.net/0nbi0p8gb167/1BUq6SUqiBOGNL151sPB4c/edd523ab13699095a6902068072880a4/PHOTO-2024-09-16-10-11-16_1_.jpg",
+            "//images.ctfassets.net/0nbi0p8gb167/7M6Ezz1PBHAwUeDArlpgUx/d79e068578324dd308719ecb3cb2e453/PHOTO-2024-09-16-10-11-16_3_.jpg",
+            "//images.ctfassets.net/0nbi0p8gb167/7a06730zPFOhIVM1flhkNl/dea8f55c4672bef995e9cecb0acaa386/PHOTO-2024-09-16-10-11-16_6_.jpg",
+            "//images.ctfassets.net/0nbi0p8gb167/7EmRdhNzdunQEyAFV1eskj/0f30c42294f16496417db2321fd5a550/PHOTO-2024-09-16-10-11-16.jpg"
+          ]
+        }
+      ]
+    },
+    {
+      "Property-Url": "padilla",
+      "Cover-Img": [
+        "https://images.ctfassets.net/0nbi0p8gb167/5LyM3mLMRDQfGr9gHaWfax/5d88297193d77153eb78e520b89089f3/Padilla82_16.jpg",
+        "https://images.ctfassets.net/0nbi0p8gb167/A4ybIKznN7AT46lsE4p2X/a96c417a8534f88daaf870839cfb0987/Padilla82_29.jpg",
+        "https://images.ctfassets.net/0nbi0p8gb167/2Qp99W4EBQK50cou66p3C8/62d40100207fbbaa07c883ce4ce66f9d/Padilla82_30.jpg",
+        "https://images.ctfassets.net/0nbi0p8gb167/7wy9qsuW6JinPH8cT4iebt/46d1abc9ac4927cb3b76b93a2fc54bd8/Padilla82_18.jpg",
+        "https://images.ctfassets.net/0nbi0p8gb167/5ZD3V8xcgMiZliKOp72YUS/208582e2aaf343ae45e0b6cf0f87ab8d/Padilla82_44.jpg"
+      ],
+      "Barrio": "Salamanca",
+      "Property": {
+        "Title": "Padilla",
+        "Description": "Esta vivienda situada en la segunda planta de un edificio\nclásico, ha sido complemente rehabilitada, con calidad y\nestilo moderno para convertirla en un auténtico hogar\nfamiliar. La vivienda se distribuye en un hall de entrada,\ncocina abierta con acceso a un amplio salón-comedor con\n2 balcones a la calle y aseo de invitados. La zona de\nnoche cuenta con 3 amplios dormitorios en suite con sus\narmarios empotrados. El dormitorio principal es también\nexterior con otro balcón. Un trastero está asignado a este\npiso. La vivienda se vende amueblada.",
+        "Price": {
+          "Price": "1850000",
+          "Ibis": "0",
+          "Precio Comunidad": "0"
+        }
+      },
+      "Amentities": {
+        "AC": true,
+        "Heating": true,
+        "Rooftop": false,
+        "Furnished": true,
+        "Portero": true,
+        "Trastero": true,
+        "Elevator": true,
+        "Parking": true
+      },
+      "Characteristics": {
+        "Tipo de Propiedad": "Residencial",
+        "Area de Estar": "206",
+        "Dormitorios": "3",
+        "Baños": "3",
+        "Patios": "2",
+        "Balcones": "3"
+      },
+      "Habitaciones-Paginas": [
+        {
+          "Title": "Dormitorios y Baños",
+          "Description": "El piso dispone de 3 dormitorios en suite, el principal con\nacceso a un balcón.",
+          "Photos": [
+            "//images.ctfassets.net/0nbi0p8gb167/4Pzhanijyf3C2A9JfnvJtd/397d4cb65382e4f28ae015589f94dbae/Padilla82_01.jpg",
+            "//images.ctfassets.net/0nbi0p8gb167/1PM4dCZgJkVaeZrlb6fYz3/76cc524a4efdf5709387e013cf91ed7b/Padilla82_11.jpg",
+            "//images.ctfassets.net/0nbi0p8gb167/3k3GaiucgUWKXI8cpQgSsU/2bc59a530e26a1c98e9cd2579e43e30c/Padilla82_49.jpg",
+            "//images.ctfassets.net/0nbi0p8gb167/1hCTV8yRTjx6IeV2NzL2qv/904c15d3f56682cfad15b232e0869447/Padilla82_56.jpg",
+            "//images.ctfassets.net/0nbi0p8gb167/61t5y16iNUspDZFRYJtDBd/fd933fac46e4009bb07626d5d12e7660/Padilla82_68.jpg",
+            "//images.ctfassets.net/0nbi0p8gb167/1TCYpXfFt2Nn37LnujBvhE/6e8866450082916db94e30911ebb0d79/Padilla82_64.jpg",
+            "//images.ctfassets.net/0nbi0p8gb167/4zghZHNeSBapuUwLLKmQJc/f88efacf5a20e6cd33d3a15f17ba71fb/Padilla82_59.jpg"
+          ]
+        }
+      ]
+    },
+    {
+      "Property-Url": "antonio-maura",
+      "Cover-Img": [
+        "https://images.ctfassets.net/0nbi0p8gb167/fexNyNHEFdAhAdNxygnzX/c85a32cd8e54c91b3036020915b02ae1/PHOTO-2024-07-29-12-25-02.jpg",
+        "https://images.ctfassets.net/0nbi0p8gb167/Xq73FFqZmYrisN5PPquvT/7a026c3d514590c0691d60e1c3676657/PHOTO-2024-07-29-12-25-02_2_.jpg",
+        "https://images.ctfassets.net/0nbi0p8gb167/5lmkcbHqRW3m3O5P6NcwZK/d64f506889b6b4c9bc1d395b05e5f7e6/PHOTO-2024-07-29-12-25-02_1_.jpg"
+      ],
+      "Barrio": "Jerónimos",
+      "Property": {
+        "Title": "Antonio Maura",
+        "Description": "Vivienda cuadrada y luminosa de 291 m2, situada en la tercera planta de un edificio moderno en el prestigioso barrio de Jerónimos con terraza a la calle de Méndez Núñez, que nos permite disfrutar de sus bonitas vistas con tranquilidad.\nLa vivienda ha sido reformada y amueblada con calidad y diseño moderno.\nLa distribución es la siguiente: hall de entrada que nos conduce a una amplia zona social con salón-comedor, sala de estar, cocina abierta con isla, todo con acceso a la terraza.  Un aseo de invitados dará uso a esta zona de día.\nLa zona de noche se compone de 4 dormitorios dobles en suite.\nPlaza de Garaje y portero en la finca\n",
+        "Price": {
+          "Price": "5100000",
+          "Ibis": "0",
+          "Precio Comunidad": "0"
+        }
+      },
+      "Amentities": {
+        "AC": true,
+        "Heating": true,
+        "Rooftop": false,
+        "Furnished": true,
+        "Portero": true,
+        "Trastero": false,
+        "Elevator": true,
+        "Parking": true
+      },
+      "Characteristics": {
+        "Tipo de Propiedad": "Residencial",
+        "Area de Estar": "281",
+        "Dormitorios": "4",
+        "Baños": "4",
+        "Patios": "1",
+        "Balcones": ""
+      },
+      "Habitaciones-Paginas": [
+        {
+          "Title": "Dormitorios",
+          "Description": "",
+          "Photos": [
+            "//images.ctfassets.net/0nbi0p8gb167/1pECuvMZ6qGS1EGEbLaPxa/e5d0c9166d9be76d27608c74547eb469/PHOTO-2024-07-29-12-25-03.jpg"
+          ]
+        }
+      ]
+    },
+    {
+      "Property-Url": "juan-bravo-serrano",
+      "Cover-Img": [
+        "https://images.ctfassets.net/0nbi0p8gb167/5xgx9dXpqiWrkmhguWgJuX/311a0658220b5a4061d6c2d9f791c319/PHOTO-2024-09-17-14-39-29.jpg",
+        "https://images.ctfassets.net/0nbi0p8gb167/46j6Dw01FCU8HvchEFFZWD/38bc1d556514e5a5dfd5d2b8cb3a9c85/PHOTO-2024-09-17-14-39-29_1_.jpg",
+        "https://images.ctfassets.net/0nbi0p8gb167/3DssdkMNzEUQUObiWIUQ6V/74b42a9c7b9588af8a3629f502f6d78d/PHOTO-2024-09-17-14-39-30.jpg"
+      ],
+      "Barrio": "Salamanca",
+      "Property": {
+        "Title": "Juan Bravo - Serrano",
+        "Description": "Situado en un edificio de calidad de los años 50, con garaje y portero, nos encontramos este piso en fase de reforma total que va a ser acondicionado para satisfacer al comprador más exigente.\nCon techos de 3 m de altura este pisazo de 353 m2 y terraza con acceso al salón- comedor, con vistas al bulevar de Juan Bravo, con sus arboles y restaurantes, es un sueño hecho realidad.\nLa distribución es la siguiente: vestíbulo de entrada que nos da paso a un amplio salón-comedor, cocina abierta con isla, un espacio unificado y luminoso con acceso a la terraza.  El aseo de invitados está situado en esta zona de día.\nLa zona de noche dispone de 4 dormitorios dobles en suite, 2 con zona de vestidor y los otros 2 con armarios empotrados. Hay una zona de lavandería al lado del dormitorio más pequeño que también se puede usar como dormitorio de servicio.\nLa calefacción es central y el a/c centralizado por conductos.",
+        "Price": {
+          "Price": "4750000",
+          "Ibis": "1218",
+          "Precio Comunidad": "528"
+        }
+      },
+      "Amentities": {
+        "AC": true,
+        "Heating": true,
+        "Rooftop": false,
+        "Furnished": true,
+        "Portero": true,
+        "Trastero": false,
+        "Elevator": true,
+        "Parking": true
+      },
+      "Characteristics": {
+        "Tipo de Propiedad": "Residencial",
+        "Area de Estar": "533",
+        "Dormitorios": "4",
+        "Baños": "3",
+        "Patios": "2",
+        "Balcones": ""
+      },
+      "Habitaciones-Paginas": [
+        {
+          "Title": "Dormitorios",
+          "Description": "La zona de noche dispone de 4 dormitorios dobles en suite, 2 con zona de vestidor y los\notros 2 con armarios empotrados. Hay una zona de lavandería al lado del dormitorio más pequeño que también se puede usar como dormitorio de servicio.",
+          "Photos": [
+            "//images.ctfassets.net/0nbi0p8gb167/7qmbZZn82KqSd7GmbkaAlx/c2e3ace3075be603a7a16b1e39417403/PHOTO-2024-09-17-14-39-30_1_.jpg",
+            "//images.ctfassets.net/0nbi0p8gb167/2dyRSQYyqGI3or8JhvBLdO/37b303a026b4ddfff1f27ad91d5a0c2e/PHOTO-2024-09-17-14-39-31_1_.jpg",
+            "//images.ctfassets.net/0nbi0p8gb167/3asJ9JwCQTIN2dPzUOOuif/4af4c2ed135c47bf22b201bdf727829f/PHOTO-2024-09-17-14-39-31.jpg"
+          ]
+        }
+      ]
+    },
+    {
+      "Property-Url": "san-lucas",
+      "Cover-Img": [
+        "https://images.ctfassets.net/0nbi0p8gb167/7jx67NhxTsP4E51Bset8QA/ce00fa3ac30575b4d0bfa8f1f66b6926/PHOTO-2024-07-17-10-30-08.jpg",
+        "https://images.ctfassets.net/0nbi0p8gb167/4AjdoDPHClHnZqP0rOwaQS/94e9d68e264d0dd157dc7768e1931358/PHOTO-2024-07-17-10-30-09_7_.jpg",
+        "https://images.ctfassets.net/0nbi0p8gb167/wEApGO1XVYe6JzzboQs8U/51693e7491d468c30c703555c82ffa14/PHOTO-2024-07-17-10-30-08_1_.jpg",
+        "https://images.ctfassets.net/0nbi0p8gb167/H0ByZuCduYvlHdJACcdEO/169dd6a633ec2895ba8ef3512b79aa2f/PHOTO-2024-07-17-10-30-08_2_.jpg",
+        "https://images.ctfassets.net/0nbi0p8gb167/RYp4G9vXRQrCPctbMsf59/a19038560ff7ef379779dc36dd78b505/PHOTO-2024-07-17-10-30-08_3_.jpg",
+        "https://images.ctfassets.net/0nbi0p8gb167/79f43ZmY2vX7hJ0X10uNjU/ca8748dd5f1aa80f1a02c6893fd2c714/PHOTO-2024-07-17-10-30-09_5_.jpg"
+      ],
+      "Barrio": "Justicia",
+      "Property": {
+        "Title": "San Lucas",
+        "Description": "Piso señorial en la tranquila y prestigiosa calle San Lucás, edificio clásico de 1900, 2 planta. Esta en fase de remodelación para entrega en abril 2024 por lo que se puede personalizar al gusto del cliente.\n\nLa distribución prevista es la siguiente: amplio hall de entrada, con zona de vestidor y zona de estudio, a la derecha la cocina semiabierta con su zona de comedor, amplio salón conectado con la zona de cocina y comedor. Un pasillo de distribución nos lleva al baño de cortesía y la zona de lavado y a continuación la zona de noche con 3 dormitorios en suite, el principal con su zona de vestidor.\n\nToda la vivienda tiene mucha luz natural tanto en la zona de día como de noche ya que los patios comunitarios son amplios y bien mantenidos. Suelos originales de 100 años, Electrodomésticos Gaggenau.",
+        "Price": {
+          "Price": "3000000",
+          "Ibis": "0",
+          "Precio Comunidad": "0"
+        }
+      },
+      "Amentities": {
+        "AC": true,
+        "Heating": true,
+        "Rooftop": false,
+        "Furnished": true,
+        "Portero": false,
+        "Trastero": false,
+        "Elevator": true,
+        "Parking": false
+      },
+      "Characteristics": {
+        "Tipo de Propiedad": "Residencial",
+        "Area de Estar": "240",
+        "Dormitorios": "3",
+        "Baños": "3",
+        "Patios": "",
+        "Balcones": ""
+      },
+      "Habitaciones-Paginas": [
+        {
+          "Title": "Dormitorios Y Baños",
+          "Description": "",
+          "Photos": [
+            "//images.ctfassets.net/0nbi0p8gb167/o8cPnCu57BkM9jCedkYw3/a480c1bc18efc3a696981dd20a6124a1/PHOTO-2024-07-17-10-30-09_8_.jpg",
+            "//images.ctfassets.net/0nbi0p8gb167/3y0kytnpCvvq76Zp7xlWm2/8b7604b4f104667acab9ba47369142ed/PHOTO-2024-07-17-10-30-09_3_.jpg",
+            "//images.ctfassets.net/0nbi0p8gb167/7gXp3HAkMmXbfR1saCE9za/2ca1949a1508f2920f89c75217003422/PHOTO-2024-07-17-10-30-09.jpg",
+            "//images.ctfassets.net/0nbi0p8gb167/1lok5Ra5Vm6MgQI4L3bTbI/52af1e0c3e3ba1a9914d352c8f4872e1/PHOTO-2024-07-17-10-30-09_1_.jpg",
+            "//images.ctfassets.net/0nbi0p8gb167/4RUSCgJtIvGKGfpfGqHtPl/fdf7a9d313c794aa93f02bfc443af144/PHOTO-2024-07-17-10-30-09_6_.jpg",
+            "//images.ctfassets.net/0nbi0p8gb167/6NAbtbu5c5NexMv2jzGefW/358a94c84b6fd3408397ad38ee9767a3/PHOTO-2024-07-17-10-30-09_4_.jpg"
+          ]
+        }
+      ]
+    }
+  ]
+}
