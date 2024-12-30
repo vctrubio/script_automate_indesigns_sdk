@@ -60,12 +60,9 @@ if (jsonFilePath.exists) {
         jsonFilePath.open('r');
         var jsonString = jsonFilePath.read();
         jsonFilePath.close();
-        
-        alert('GOOD we read the json file');
         var jsonData = parseJSON(jsonString);
         
         if (jsonData) {
-            alert("JSON data parsed successfully");
             placeholderValues = {
                 "{{Title}}": jsonData.Property.Title,
                 // "{{Cover-Img}}": jsonData["Cover-Img"],
@@ -76,7 +73,8 @@ if (jsonFilePath.exists) {
                 "{{Description}}": jsonData.Property.Description,
                 "{{Characteristics}}": jsonData.Characteristics,
                 "{{Precio}}": jsonData.Property.Price.Price,
-                "{{Ibis-Mas}}": jsonData.Property.Price.Ibis
+                "{{Ibis-Mas}}": jsonData.Property.Price.Ibis,
+                "{{Property-Url}}": jsonData["Property-Url"]
             };
         } else {
             throw new Error("Failed to parse JSON data");
@@ -91,7 +89,6 @@ if (jsonFilePath.exists) {
     placeholderValues = tmpPlaceholderValues;
 }
 
-// Open the InDesign file
 if (filePath.exists) {
     var doc = app.open(filePath);
 
@@ -105,21 +102,16 @@ if (filePath.exists) {
 
         if (trueAmenities.length > 0) {
             var tableFrame = page.textFrames.add();
-            tableFrame.geometricBounds = textFrame.geometricBounds; // Match the size and position of the placeholder
+            tableFrame.geometricBounds = textFrame.geometricBounds; 
             var table = tableFrame.insertionPoints[0].tables.add();
             table.columnCount = 1;
             table.bodyRowCount = trueAmenities.length;
 
             for (var i = 0; i < trueAmenities.length; i++) {
                 table.rows[i].cells[0].contents = trueAmenities[i];
-
-                // if (i !== trueAmenities.length - 1) {
-                //     table.rows[i].cells[0].bottomEdgeStrokeWeight = 1;
-                //     table.rows[i].cells[1].bottomEdgeStrokeWeight = 1;
-                // }
             }
 
-            table.columns[0].width = 20; // Set the first column width to 200 points
+            table.columns[0].width = 20;
         } else {
             textFrame.contents = "";
         }
@@ -136,14 +128,14 @@ if (filePath.exists) {
 
         if (keys.length > 0) {
             var tableFrame = page.textFrames.add();
-            tableFrame.geometricBounds = textFrame.geometricBounds; // Match the size and position of the placeholder
+            tableFrame.geometricBounds = textFrame.geometricBounds; 
             var table = tableFrame.insertionPoints[0].tables.add();
-            table.columnCount = 2; // Two columns for keys and values
+            table.columnCount = 2; 
             table.bodyRowCount = keys.length;
 
             for (var i = 0; i < keys.length; i++) {
-                table.rows[i].cells[0].contents = keys[i]; // Column 1: Keys
-                table.rows[i].cells[1].contents = values[i]; // Column 2: Values
+                table.rows[i].cells[0].contents = keys[i]; 
+                table.rows[i].cells[1].contents = values[i]; 
 
                 // Set bottom border for each row except the last one
                 // if (i !== keys.length - 1) {
@@ -170,7 +162,6 @@ if (filePath.exists) {
             var textFrame = page.textFrames[j];
             var frameText = textFrame.contents;
 
-            // Replace placeholders with values
             for (var placeholder in placeholderValues) {
                 if (frameText.indexOf(placeholder) !== -1) {
                     // alert("Found placeholder: " + placeholder); // Debug alert
@@ -208,7 +199,8 @@ if (filePath.exists) {
         }
     }
 
-    var outputFilePath = dirPath + "OutputTest.indd";
+    const propertyUrl = placeholderValues["{{Title}}"];
+    var outputFilePath = dirPath + "/fichas-stash/ficha-" + propertyUrl + ".indd";
     doc.save(new File(outputFilePath));
     doc.close(SaveOptions.NO);
 
