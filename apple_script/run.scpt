@@ -1,8 +1,10 @@
 try
-    tell application "/Applications/Adobe InDesign 2025/Adobe InDesign 2025.app"
+    tell application "Adobe InDesign 2025"
         activate
-        display dialog "Hello World! InDesign was successfully opened!" buttons {"OK"} default button 1
+        delay 2
+        do script (POSIX file "/Users/trtp/Desktop/indesign_script/js-script.jsx") language javascript
+        display dialog "Script executed successfully!" buttons {"OK"} default button 1
     end tell
 on error errorMessage
-    display dialog "Failed to open InDesign: " & errorMessage buttons {"OK"} default button 1
+    display dialog "Failed to execute script: " & errorMessage buttons {"OK"} default button 1
 end try
