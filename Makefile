@@ -6,3 +6,6 @@ apple:
 save:
 	node save-to-location.js
 
+
+rmf:
+	rm fichas-stash/*
