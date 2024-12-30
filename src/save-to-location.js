@@ -3,14 +3,13 @@ const path = require('path');
 
 // Define paths
 const INDESIGN_SCRIPTS_PATH = '/Users/trtp/Library/Preferences/Adobe InDesign/Version 20.0/en_US/Scripts/Scripts Panel';
-const SOURCE_DIR = path.join(process.env.HOME, 'Desktop/indesign_script');
-const SCRIPT_NAME = 'property-generator.jsx';
+const SOURCE_DIR = path.join(process.env.HOME, 'Desktop/indesign_script/src');
+const SCRIPT_NAME = 'js-script.jsx';
 
 // Source and destination paths
-const sourcePath = path.join(SOURCE_DIR, 'js-script.jsx');
+const sourcePath = path.join(SOURCE_DIR, SCRIPT_NAME);
 const destPath = path.join(INDESIGN_SCRIPTS_PATH, SCRIPT_NAME);
 
-// Ensure directories exist
 try {
     // Create Scripts Panel directory if it doesn't exist
     if (!fs.existsSync(INDESIGN_SCRIPTS_PATH)) {

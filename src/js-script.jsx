@@ -1,9 +1,7 @@
-// Define the InDesign Scripts Panel path
 const INDESIGN_SCRIPTS_PATH = "/Users/trtp/Library/Preferences/Adobe InDesign/Version 20.0/en_US/Scripts/Scripts Panel/";
-
 const dirPath = "~/Desktop/indesign_script/";
 var filePath = File(dirPath + "Template101.indd");
-var jsonFilePath = File(dirPath + "template-test.json");
+var jsonFilePath = File(dirPath + "json-data/template-test.json");
 
 // Default placeholder values
 var tmpPlaceholderValues = {
@@ -261,9 +259,9 @@ if (filePath.exists) {
     doc.save(new File(outputFilePath));
     doc.close(SaveOptions.NO);
 
-    alert("Placeholders replaced and saved as: " + outputFilePath);
+    alert("Ficha GOOD " + outputFilePath);
 } else {
-    alert("File not found: " + filePath.fsName);
+    alert("Ficha NO GOOD");
     app.exit();
 }
 

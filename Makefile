@@ -4,7 +4,7 @@ apple:
 	osascript apple_script/run.scpt
 
 save:
-	node save-to-location.js
+	node ./src/save-to-location.js
 
 
 rmf:
