@@ -12,7 +12,7 @@ function formatPrice(price) {
     // Convert to number in case it's a string
     var num = Number(price);
     if (isNaN(num)) return "Precio: 0 €";
-    
+
     // Format with Spanish thousands separator (.) and add € symbol
     var formattedPrice = num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     return "Precio: " + formattedPrice + " €";
@@ -22,7 +22,7 @@ function formatIbis(ibis) {
     // Convert to number in case it's a string
     var num = Number(ibis);
     if (isNaN(num) || num === 0) return "";
-    
+
     // Format with Spanish thousands separator (.) and add € symbol
     var formattedIbis = num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     return formattedIbis + " €";
@@ -41,6 +41,7 @@ function parseJSON(jsonString) {
 }
 
 function downloadImage(url, localPath) {
+    // not tested
     try {
         var socket = new Socket();
         var urlParts = url.split('/');
@@ -72,10 +73,31 @@ function downloadImage(url, localPath) {
     return false;
 }
 
+function styleTable(table) {
+    try {
+        // First remove all table borders
+
+        for (var i = 0; i < table.cells.length; i++) {
+            var cell = table.cells[i];
+
+            // Clear all borders
+            cell.topEdgeStrokeWeight = "0pt";
+            cell.leftEdgeStrokeWeight = "0pt";
+            if (i > 0) {
+                cell.rightEdgeStrokeWeight = "0pt";
+            }
+
+            cell.bottomEdgeStrokeWeight = "0.5pt";
+        }
+    } catch (e) {
+        alert("Warning: Could not apply table styling: " + e.message);
+    }
+}
+
 function createCharacteristicsTable(page, textFrame, characteristics) {
     var keys = [];
     var values = [];
-    
+
     for (var key in characteristics) {
         if (characteristics.hasOwnProperty(key)) {
             keys.push(key);
@@ -97,6 +119,8 @@ function createCharacteristicsTable(page, textFrame, characteristics) {
 
         table.columns[0].width = 12;
         table.columns[1].width = 8;
+
+        styleTable(table);
     } else {
         textFrame.contents = "";
     }
@@ -122,6 +146,8 @@ function createAmenitiesTable(page, textFrame, amenities) {
         }
 
         table.columns[0].width = 20;
+
+        styleTable(table);
     } else {
         textFrame.contents = "";
     }
@@ -135,8 +161,8 @@ function processImages(page, placeholderValues) {
         var imagePath = '';
         if (rectangle.label === "{{Cover-Img}}") {
             imagePath = placeholderValues["{{Cover-Img}}"];
-        } else if (rectangle.label === "{{Index-Cover-Img-First}}" || 
-                   rectangle.label === "{{Index-Cover-Img-Second}}") {
+        } else if (rectangle.label === "{{Index-Cover-Img-First}}" ||
+            rectangle.label === "{{Index-Cover-Img-Second}}") {
             imagePath = placeholderValues["{{Extra-Img}}"];
         }
 
@@ -146,13 +172,39 @@ function processImages(page, placeholderValues) {
             var tempFile = new File(dirPath + '/' + rectangle.label.replace(/[{}]/g, '') + '.jpg');
             if (downloadImage(imagePath, tempFile.fsName)) {
                 rectangle.place(tempFile);
-                rectangle.fit(FitOptions.CONTENT_AWARE_FIT);
+                styleImage(rectangle);
                 tempFile.remove();
             }
         } else {
             rectangle.place(File(imagePath));
-            rectangle.fit(FitOptions.CONTENT_AWARE_FIT);
+            styleImage(rectangle);
         }
+    }
+}
+
+function styleImage(rectangle) {
+    // Fit image to frame
+    rectangle.fit(FitOptions.FILL_PROPORTIONALLY);
+
+    const borderRadius = '42px';
+
+    try {
+        // Remove any border
+        rectangle.strokeWeight = 0; // Set stroke weight to 0
+        rectangle.strokeColor = "None"; // Remove stroke color
+
+        // Set corner radius to 42 pixels for all corners
+        rectangle.topLeftCornerOption = CornerOptions.ROUNDED_CORNER;
+        rectangle.topRightCornerOption = CornerOptions.ROUNDED_CORNER;
+        rectangle.bottomLeftCornerOption = CornerOptions.ROUNDED_CORNER;
+        rectangle.bottomRightCornerOption = CornerOptions.ROUNDED_CORNER;
+
+        rectangle.topLeftCornerRadius = borderRadius;
+        rectangle.topRightCornerRadius = borderRadius;
+        rectangle.bottomLeftCornerRadius = borderRadius;
+        rectangle.bottomRightCornerRadius = borderRadius;
+    } catch (e) {
+        alert("Warning: Could not apply changes to image: " + e.message);
     }
 }
 
@@ -263,7 +315,7 @@ function getAllProperties() {
 
 // Modify loadJsonData to use getPropertyById
 function loadJsonData() {
-    var propertyUrl = "san-gregorio"; // You might want to make this configurable
+    var propertyUrl = "alaya"; // You might want to make this configurable
     return getPropertyById(propertyUrl);
 }
 
