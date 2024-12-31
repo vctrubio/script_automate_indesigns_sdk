@@ -4,34 +4,29 @@ var dirPath = "~/Desktop/indesign_script/";
 var filePath = File(dirPath + "Template101.indd");
 var jsonFilePath = File(dirPath + "json-data/template-test.json");
 
-// Default placeholder values
-var tmpPlaceholderValues = {
-    "{{Title}}": "Henry FordJackson",
-    "{{Cover-Img}}": "~/Desktop/EmilyRatajkowski.jpg",
-    "{{Extra-Img}}": "~/Desktop/abcd.jpg",
-    "{{Amentities}}": {
-        "AC": true,
-        "Heating": true,
-        "Rooftop": false,
-        "Furnished": true,
-        "Portero": false,
-        "Trastero": false,
-        "Elevator": true,
-        "Parking": false
-    },
-    "{{Description}}": "La distribución es la siguiente: Amplio hall de entrada que nos conducen a la zona de salón con 2 balcones a la calle...",
-    "{{Characteristics}}": {
-        "Tipo de Propiedad": "Residencial",
-        "Dormitorios": "3",
-        "Baños": "3",
-        "Patios": "1",
-        "Balcones": "2"
-    },
-    "{{Precio}}": "4000000",
-    "{{Ibis-Mas}}": "LOL"
-};
+var coverImg = "~/Desktop/x-photos/a.jpeg";
+var extraImg = "~/Desktop/x-photos/b.jpeg";
 
-var placeholderValues;
+// Helper functions
+function formatPrice(price) {
+    // Convert to number in case it's a string
+    var num = Number(price);
+    if (isNaN(num)) return "Precio: 0 €";
+    
+    // Format with Spanish thousands separator (.) and add € symbol
+    var formattedPrice = num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    return "Precio: " + formattedPrice + " €";
+}
+
+function formatIbis(ibis) {
+    // Convert to number in case it's a string
+    var num = Number(ibis);
+    if (isNaN(num) || num === 0) return "";
+    
+    // Format with Spanish thousands separator (.) and add € symbol
+    var formattedIbis = num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    return formattedIbis + " €";
+}
 
 function parseJSON(jsonString) {
     try {
@@ -185,37 +180,91 @@ function processTextFrames(page, placeholderValues) {
     }
 }
 
-function loadJsonData() {
+function getPropertyById(propertyUrl) {
     if (!jsonFilePath.exists) {
-        alert("JSON QUIT FILE not found: " + jsonFilePath.fsName);
+        alert("JSON file not found: " + jsonFilePath.fsName);
         return null;
     }
 
     try {
-        jsonFilePath.open('r');
-        var jsonString = jsonFilePath.read();
-        jsonFilePath.close();
+        var propertiesFile = File(dirPath + "json-data/properties-data.json");
+        propertiesFile.open('r');
+        var jsonString = propertiesFile.read();
+        propertiesFile.close();
         var jsonData = parseJSON(jsonString);
 
-        if (!jsonData) {
-            throw new Error("Failed to parse JSON data");
+        if (!jsonData || !jsonData.properties) {
+            throw new Error("Invalid properties data");
         }
 
-        return {
-            "{{Title}}": jsonData.Property.Title,
-            "{{Cover-Img}}": tmpPlaceholderValues["{{Cover-Img}}"],
-            "{{Extra-Img}}": tmpPlaceholderValues["{{Extra-Img}}"],
-            "{{Amentities}}": jsonData.Amentities,
-            "{{Description}}": jsonData.Property.Description,
-            "{{Characteristics}}": jsonData.Characteristics,
-            "{{Precio}}": jsonData.Property.Price.Price,
-            "{{Ibis-Mas}}": jsonData.Property.Price.Ibis,
-            "{{Property-Url}}": jsonData["Property-Url"]
-        };
+        // Find the property with matching URL
+        for (var i = 0; i < jsonData.properties.length; i++) {
+            var property = jsonData.properties[i];
+            if (property["Property-Url"] === propertyUrl) {
+                return {
+                    "{{Title}}": property.Property.Title,
+                    "{{Cover-Img}}": coverImg,
+                    "{{Extra-Img}}": extraImg,
+                    "{{Amentities}}": property.Amentities || {},
+                    "{{Description}}": property.Property.Description,
+                    "{{Characteristics}}": property.Characteristics,
+                    "{{Precio}}": formatPrice(property.Property.Price.Price),
+                    "{{Ibis-Mas}}": formatIbis(property.Property.Price.Ibis),
+                    "{{Property-Url}}": property["Property-Url"]
+                };
+            }
+        }
+        alert("Property not found with URL: " + propertyUrl);
+        return null;
     } catch (e) {
-        alert("Error reading or parsing JSON file: " + e.message);
+        alert("Error reading or parsing properties file: " + e.message);
         return null;
     }
+}
+
+function getAllProperties() {
+    if (!jsonFilePath.exists) {
+        alert("JSON file not found: " + jsonFilePath.fsName);
+        return [];
+    }
+
+    try {
+        var propertiesFile = File(dirPath + "json-data/properties-data.json");
+        propertiesFile.open('r');
+        var jsonString = propertiesFile.read();
+        propertiesFile.close();
+        var jsonData = parseJSON(jsonString);
+
+        if (!jsonData || !jsonData.properties) {
+            throw new Error("Invalid properties data");
+        }
+
+        var properties = [];
+        for (var i = 0; i < jsonData.properties.length; i++) {
+            var property = jsonData.properties[i];
+            properties.push({
+                "{{Title}}": property.Property.Title,
+                "{{Cover-Img}}": coverImg,
+                "{{Extra-Img}}": extraImg,
+                "{{Amentities}}": property.Amentities || {},
+                "{{Description}}": property.Property.Description,
+                "{{Characteristics}}": property.Characteristics,
+                "{{Precio}}": formatPrice(property.Property.Price.Price),
+                "{{Ibis-Mas}}": formatIbis(property.Property.Price.Ibis),
+                "{{Property-Url}}": property["Property-Url"]
+            });
+        }
+        return properties;
+    } catch (e) {
+        alert("Error reading or parsing properties file: " + e.message);
+        return [];
+    }
+}
+
+// Modify loadJsonData to use getPropertyById
+function loadJsonData() {
+    var propertyUrl = "san-gregorio"; // You might want to make this configurable
+    return getPropertyById(propertyUrl);
 }
 
 function processDocument(doc, placeholderValues) {
@@ -227,14 +276,30 @@ function processDocument(doc, placeholderValues) {
 }
 
 function saveAndCloseDocument(doc, propertyUrl) {
+    // Save InDesign file
     var outputFilePath = dirPath + "/fichas-stash/ficha-" + propertyUrl + ".indd";
     doc.save(new File(outputFilePath));
+
+    // Export PDF
+    var pdfPath = dirPath + "/fichas-stash/ficha-" + propertyUrl + ".pdf";
+    var pdfFile = new File(pdfPath);
+
+    // PDF export preferences
+    var pdfPreset = app.pdfExportPresets.itemByName("[High Quality Print]");
+    if (!pdfPreset.isValid) {
+        pdfPreset = app.pdfExportPresets[0]; // Use default preset if High Quality not found
+    }
+
+    // Export the PDF
+    doc.exportFile(ExportFormat.PDF_TYPE, pdfFile, false, pdfPreset);
+
+    // Close the document
     doc.close(SaveOptions.NO);
-    alert("Ficha GOOD " + outputFilePath);
+    alert("Files saved:\nInDesign: " + outputFilePath + "\nPDF: " + pdfPath);
 }
 
 function main() {
-    placeholderValues = loadJsonData();
+    var placeholderValues = loadJsonData();
     if (!placeholderValues) {
         app.exit();
         return;
