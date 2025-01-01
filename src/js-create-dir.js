@@ -1,13 +1,14 @@
+const { exec } = require('child_process');
 const fs = require('fs');
 const { json } = require('stream/consumers');
 const prompt = require('prompt-sync')();
 
-const ROOT_DIR = '../';
+const ROOT_DIR = __dirname + '/../';
 
 const NAME = 'JSON-Fetch-Contentful.json' // for forward compatibility
 const jsonFilePath = ROOT_DIR + 'json-data/properties-data.json' // Make sure exist
 
-const dirPropertiesName = 'test-properties'; //where to pout the property dir information
+const dirPropertiesName = 'test-properties/'; //where to pout the property dir information
 
 /*
 {
@@ -98,11 +99,13 @@ function listProperties(jsonObject) {
 }
 
 
-function firePropertyImageDir(propertyUrls) {
+function firePropertyImageDir(jsonObject) {
+    const propertyUrls = listProperties(jsonObject);
+
 
     for (const propertyUrl of propertyUrls) {
         // console.log(propertyUrl);
-        const propertyDir = `${dirPropertiesName}/${propertyUrl}`;
+        const propertyDir = `${dirPropertiesName}${propertyUrl}`;
         const photoDir = `${propertyDir}/images`;
 
         if (!fs.existsSync(`../${photoDir}`)) {
@@ -114,42 +117,43 @@ function firePropertyImageDir(propertyUrls) {
             // const response = prompt`${photoDir} Directory already exists. Do you want to overwrite it? (y/n/q/c): `;
         }
 
+        const getImages = jsonObject.properties.filter(property => property['Property-Url'] === propertyUrl)[0]['Cover-Img'];
+
+
+        let letter = 'a'.charCodeAt(0);
+        for (const img of getImages) {
+            const letterTransform = String.fromCharCode(letter);
+            const path = `${dirPropertiesName}${propertyUrl}/${letterTransform}.jpeg`;
+            console.log('imgpath: ', path)
+            letter++;
+        }
 
     }
-
 }
 
-
-
-// createDir('test-properties');
-// createPhotoDir(dirPhoto)
-
-
-
-
-function abcs(ft) {
-    const letter = 'a'.charCodeAt(0);
-    for (let i = 0; i < 3; i++) {
-        console.log(String.fromCharCode(letter + i));
-        ft();
-    }
+function downloadImage(url, outputPath) {
+    return new Promise((resolve, reject) => {
+        const fileStream = fs.createWriteStream(outputPath);
+        https.get(url, (response) => {
+            if (response.statusCode !== 200) {
+                reject(new Error(`Failed to download image. Status code: ${response.statusCode}`));
+                return;
+            }
+            response.pipe(fileStream);
+            fileStream.on('finish', () => {
+                fileStream.close(() => resolve(outputPath));
+            });
+        }).on('error', (err) => {
+            fs.unlink(outputPath, () => reject(err)); // Cleanup on error
+        });
+    });
 }
-
-
-function hello() {
-    console.log('Hello');
-}
-
-abcs(hello)
-
-
 
 function main() {
     jsonObject = getJsonType(jsonFilePath);
     createDir(dirPropertiesName);
-    const lst = listProperties(jsonObject);
-    firePropertyImageDir(lst);
+    firePropertyImageDir(jsonObject);
 }
 
 
-// main()
+main()
