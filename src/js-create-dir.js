@@ -53,23 +53,26 @@ function createDir(dirName) {
                 const response = prompt('Directory already exists. Do you want to overwrite it? (y/n/c/s): ');
 
                 if (response.toLowerCase() === 'y') {
-                    console.log(`Property ${property.property_url} overwritten successfully!`);
+                    console.log(`Property ${property.property_url}: overwritten successfully!`);
                 } else if (response.toLowerCase() === 'n') {
                     console.log(`Skipping property ${property.property_url}`);
                     return
                 } else if (response.toLowerCase() === 'c') {
-                    console.log('Continuing without changes.');
+                    console.log('Property ${property.property_url}: Continuing without changes.');
                     continue
                 }
                 else if (response.toLowerCase() === 's') {
                     skip++;
-                    console.log(`Skipping ALL `);
+                    console.log(`Skipping... `);
                 }
             }
 
-            const propertyJson = JSON.stringify(property)
-            fs.writeFileSync(`../${propertyDir}/${NAME}`, propertyJson);
-            console.log('\x1b[32m%s\x1b[0m', `${property_url} √`);
+            const filePath = `../${propertyDir}/${NAME}`;
+            const propertyJson = JSON.stringify(property);
+            fs.writeFileSync(filePath, propertyJson);
+            fs.chmodSync(filePath, '444'); // Set file to read-only for the user
+            if (skip > 0)
+                console.log('\x1b[32m%s\x1b[0m', `${property_url} √`);
         }
         console.log('finished')
     }
