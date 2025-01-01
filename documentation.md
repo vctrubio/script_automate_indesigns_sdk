@@ -6,19 +6,12 @@ A dir that contains all the property, has an execution cmd for AllProperties or 
     -PropertyId
         -JSON-Fetch-Contentful.json --only chmod +r
         -JSON-Detetached-Info.json
-        heklasdlfasldfsal
         -Images
             -a.jpeg ...
         -Makefile
         -Export PDF
         -Export Indgg
 
-Iasdfasdfsadfsefsad
-
-asdfasdfasdfasfas
-adfasdfas
-
-sdac zxzc
 Export Function = to execute and format the PropertyId [DIR]  
     1. GET from Contenful API
     2. Verify the JSON if true: create DIR if not exist
@@ -29,4 +22,6 @@ Export Function = to execute and format the PropertyId [DIR]
     7.     Script to indgg -> PDF Indgg
     8. Detach-Info to later modify
 
-asdadsadadass
+## NEXT UP
+
+read from db-properties to write create indesign and pdfs
