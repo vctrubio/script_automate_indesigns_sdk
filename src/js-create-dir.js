@@ -1,11 +1,14 @@
 const fs = require('fs');
+const { json } = require('stream/consumers');
 const prompt = require('prompt-sync')();
 
-const NAME = 'JSON-Fetch-Contentful.json'
-// Fetch, create, and write to a Property directory
-
 const ROOT_DIR = '../';
-const jsonFilePath = ROOT_DIR + 'json-data/properties-data.json'
+
+const NAME = 'JSON-Fetch-Contentful.json' // for forward compatibility
+const jsonFilePath = ROOT_DIR + 'json-data/properties-data.json' // Make sure exist
+
+const dirPropertiesName = 'test-properties'; //where to pout the property dir information
+
 /*
 {
   "date": "30.12.24",
@@ -22,14 +25,13 @@ function getJsonType(jsonFilePath) {
 }
 //
 
-const dirPath = ROOT_DIR + '/properties';
+
 /*
 create dir and place property by propertyIdDir - read the documenation.md
 ROOT_DIR/properties/property-url/files,dir
 file1: property-json
 dir1: Images- property image download folder - for uplodaing to indesign
 */
-
 function createDir(dirName) {
     const jsonObject = getJsonType(jsonFilePath);
 
@@ -50,64 +52,82 @@ function createDir(dirName) {
                 if (skip > 0) continue;
 
                 console.log(`\x1b[33m%s\x1b[0m`, `WARNING: ${propertyDir} already exists`);
-                const response = prompt('Directory already exists. Do you want to overwrite it? (y/n/c/s): ');
+                const response = prompt('Directory already exists. Do you want to overwrite it? (y/n/q/c): ');
 
                 if (response.toLowerCase() === 'y') {
-                    console.log(`Property ${property.property_url}: overwritten successfully!`);
-                } else if (response.toLowerCase() === 'n') {
-                    console.log(`Skipping property ${property.property_url}`);
+                    console.log(`Property ${property_url}: overwritten sxuccessfully!`);
+                } else if (response.toLowerCase() === 'q') {
+                    console.log('\x1b[30m%s\x1b[0m', `Safe exit. Property ${property_url} not overwritten.`);
                     return
-                } else if (response.toLowerCase() === 'c') {
-                    console.log('Property ${property.property_url}: Continuing without changes.');
+                } else if (response.toLowerCase() === 'n') {
+                    console.log('\x1b[30m%s\x1b[0m', `Property ${property_url}: without changes.`);
                     continue
                 }
-                else if (response.toLowerCase() === 's') {
+                else if (response.toLowerCase() === 'c') {
                     skip++;
-                    console.log(`Skipping... `);
+                    console.log(`Continuing... `);
                 }
             }
 
             const filePath = `../${propertyDir}/${NAME}`;
             const propertyJson = JSON.stringify(property);
+            if (fs.existsSync(filePath)) {
+                fs.unlinkSync(filePath); // Delete the existing file
+            }
             fs.writeFileSync(filePath, propertyJson);
             fs.chmodSync(filePath, '444'); // Set file to read-only for the user
-            if (skip > 0)
-                console.log('\x1b[32m%s\x1b[0m', `${property_url} √`);
+
+            console.log('\x1b[32m%s\x1b[0m', `${property_url} √`);
         }
-        console.log('finished')
     }
     catch (err) {
         console.error(err);
     }
     return
 }
-
 //
-createDir('test-properties');
 
-function createPropertyDirectory(jsonFilePath) {
-
-
-    const properties = jsonObject.properties;
-    // properties.forEach((property) => {
-    //     const dirName = property.title;
-    //     fs.mkdir(`../${dirName}`, (err) => {
-    //         if (err) {
-    //             console.log(err);
-    //         } else {
-    //             console.log(`Directory ${dirName} created successfully!`);
-    //         }
-    //     });
-    // });
+function listProperties(jsonObject) {
+    var propertyUrls = []
+    for (let i = 0; i < jsonObject.properties.length; i++) {
+        const property = jsonObject.properties[i];
+        const property_url = property['Property-Url']
+        propertyUrls.push(property_url);
+    }
+    return propertyUrls
+}
 
 
+function firePropertyImageDir(propertyUrls) {
+
+    for (const propertyUrl of propertyUrls) {
+        // console.log(propertyUrl);
+        const propertyDir = `${dirPropertiesName}/${propertyUrl}`;
+        const photoDir = `${propertyDir}/images`;
+
+        if (!fs.existsSync(`../${photoDir}`)) {
+            fs.mkdirSync(`../${photoDir}`);
+            console.log(`\x1b[32m%s\x1b[0m`, `SUCCESS: ${photoDir} created`);
+        }
+        else {
+            console.log(`\x1b[33m%s\x1b[0m`, `WARNING: ${photoDir} already exists`);
+        }
+    }
 
 }
 
+
+
+// createDir('test-properties');
+// createPhotoDir(dirPhoto)
 
 
 function main() {
-    console.log('main')
-    // getJsonType(jsonFilePath)
-
+    jsonObject = getJsonType(jsonFilePath);
+    createDir(dirPropertiesName);
+    const lst = listProperties(jsonObject);
+    firePropertyImageDir(lst);
 }
+
+
+main()
