@@ -1,6 +1,5 @@
-const { exec } = require('child_process');
+const https = require('https');
 const fs = require('fs');
-const { json } = require('stream/consumers');
 const prompt = require('prompt-sync')();
 
 const ROOT_DIR = __dirname + '/../';
@@ -45,7 +44,7 @@ function createDir(dirName) {
         for (let i = 0; i < jsonObject.properties.length; i++) {
             const property = jsonObject.properties[i];
             const property_url = property['Property-Url']
-            const propertyDir = `${dirName}/${property_url}`;
+            const propertyDir = `${dirName}${property_url}`;
 
             if (!fs.existsSync(`../${propertyDir}`)) {
                 fs.mkdirSync(`../${propertyDir}`);
@@ -78,7 +77,8 @@ function createDir(dirName) {
             fs.writeFileSync(filePath, propertyJson);
             fs.chmodSync(filePath, '444'); // Set file to read-only for the user
 
-            console.log('\x1b[32m%s\x1b[0m', `${property_url} √`);
+            if (skip < 1)
+                console.log('\x1b[32m%s\x1b[0m', `${property_url} √`);
         }
     }
     catch (err) {
@@ -88,6 +88,9 @@ function createDir(dirName) {
 }
 //
 
+/*
+returns the property_urls inside the jsonObject
+*/
 function listProperties(jsonObject) {
     var propertyUrls = []
     for (let i = 0; i < jsonObject.properties.length; i++) {
@@ -99,36 +102,39 @@ function listProperties(jsonObject) {
 }
 
 
-function firePropertyImageDir(jsonObject) {
+
+async function firePropertyImageDir(jsonObject) {
     const propertyUrls = listProperties(jsonObject);
 
+    try {
 
-    for (const propertyUrl of propertyUrls) {
-        // console.log(propertyUrl);
-        const propertyDir = `${dirPropertiesName}${propertyUrl}`;
-        const photoDir = `${propertyDir}/images`;
+        for (const propertyUrl of propertyUrls) {
+            const propertyDir = `${dirPropertiesName}${propertyUrl}`;
+            const photoDir = `../${propertyDir}/images`;
 
-        if (!fs.existsSync(`../${photoDir}`)) {
-            fs.mkdirSync(`../${photoDir}`);
-            console.log(`\x1b[32m%s\x1b[0m`, `SUCCESS: ${photoDir} created`);
+            if (!fs.existsSync(`${photoDir}`)) {
+                fs.mkdirSync(`${photoDir}`);
+                console.log(`\x1b[32m%s\x1b[0m`, `SUCCESS: ${photoDir} created`);
+            }
+            else {
+                console.log(`\x1b[33m%s\x1b[0m`, `WARNING: ${photoDir} already exists`);
+                // const response = prompt`${photoDir} Directory already exists. Do you want to overwrite it? (y/n/q/c): `;
+            }
+
+            const getImages = jsonObject.properties.filter(property => property['Property-Url'] === propertyUrl)[0]['Cover-Img'];
+            let letter = 'a'.charCodeAt(0);
+            for (const img of getImages) {
+                const letterTransform = String.fromCharCode(letter);
+                const path = `${photoDir}/${letterTransform}.jpeg`;
+                const savedPath = await downloadImage(img, path)
+                letter++;
+            }
         }
-        else {
-            console.log(`\x1b[33m%s\x1b[0m`, `WARNING: ${photoDir} already exists`);
-            // const response = prompt`${photoDir} Directory already exists. Do you want to overwrite it? (y/n/q/c): `;
-        }
-
-        const getImages = jsonObject.properties.filter(property => property['Property-Url'] === propertyUrl)[0]['Cover-Img'];
-
-
-        let letter = 'a'.charCodeAt(0);
-        for (const img of getImages) {
-            const letterTransform = String.fromCharCode(letter);
-            const path = `${dirPropertiesName}${propertyUrl}/${letterTransform}.jpeg`;
-            console.log('imgpath: ', path)
-            letter++;
-        }
-
     }
+    catch {
+        console.error('Error in firePropertyImageDir function ')
+    }
+    console.log(`\x1b[32m%s\x1b[0m`, `firedPropertyImages`);
 }
 
 function downloadImage(url, outputPath) {
@@ -147,6 +153,7 @@ function downloadImage(url, outputPath) {
             fs.unlink(outputPath, () => reject(err)); // Cleanup on error
         });
     });
+
 }
 
 function main() {
