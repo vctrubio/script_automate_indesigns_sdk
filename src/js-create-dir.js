@@ -111,7 +111,10 @@ function firePropertyImageDir(propertyUrls) {
         }
         else {
             console.log(`\x1b[33m%s\x1b[0m`, `WARNING: ${photoDir} already exists`);
+            // const response = prompt`${photoDir} Directory already exists. Do you want to overwrite it? (y/n/q/c): `;
         }
+
+
     }
 
 }
@@ -122,6 +125,25 @@ function firePropertyImageDir(propertyUrls) {
 // createPhotoDir(dirPhoto)
 
 
+
+
+function abcs(ft) {
+    const letter = 'a'.charCodeAt(0);
+    for (let i = 0; i < 3; i++) {
+        console.log(String.fromCharCode(letter + i));
+        ft();
+    }
+}
+
+
+function hello() {
+    console.log('Hello');
+}
+
+abcs(hello)
+
+
+
 function main() {
     jsonObject = getJsonType(jsonFilePath);
     createDir(dirPropertiesName);
@@ -130,4 +152,4 @@ function main() {
 }
 
 
-main()
+// main()

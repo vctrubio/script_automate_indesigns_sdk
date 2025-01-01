@@ -1,1 +1,45 @@
-{"Property-Url":"antonio-maura","Cover-Img":["https://images.ctfassets.net/0nbi0p8gb167/fexNyNHEFdAhAdNxygnzX/c85a32cd8e54c91b3036020915b02ae1/PHOTO-2024-07-29-12-25-02.jpg","https://images.ctfassets.net/0nbi0p8gb167/Xq73FFqZmYrisN5PPquvT/7a026c3d514590c0691d60e1c3676657/PHOTO-2024-07-29-12-25-02_2_.jpg","https://images.ctfassets.net/0nbi0p8gb167/5lmkcbHqRW3m3O5P6NcwZK/d64f506889b6b4c9bc1d395b05e5f7e6/PHOTO-2024-07-29-12-25-02_1_.jpg"],"Barrio":"Jerónimos","Property":{"Title":"Antonio Maura","Description":"Vivienda cuadrada y luminosa de 291 m2, situada en la tercera planta de un edificio moderno en el prestigioso barrio de Jerónimos con terraza a la calle de Méndez Núñez, que nos permite disfrutar de sus bonitas vistas con tranquilidad.\nLa vivienda ha sido reformada y amueblada con calidad y diseño moderno.\nLa distribución es la siguiente: hall de entrada que nos conduce a una amplia zona social con salón-comedor, sala de estar, cocina abierta con isla, todo con acceso a la terraza.  Un aseo de invitados dará uso a esta zona de día.\nLa zona de noche se compone de 4 dormitorios dobles en suite.\nPlaza de Garaje y portero en la finca\n","Price":{"Price":"5100000","Ibis":"0","Precio Comunidad":"0"}},"Amentities":{"AC":true,"Heating":true,"Rooftop":false,"Furnished":true,"Portero":true,"Trastero":false,"Elevator":true,"Parking":true},"Characteristics":{"Tipo de Propiedad":"Residencial","Area de Estar":"281","Dormitorios":"4","Baños":"4","Patios":"1","Balcones":""},"Habitaciones-Paginas":[{"Title":"Dormitorios","Description":"","Photos":["//images.ctfassets.net/0nbi0p8gb167/1pECuvMZ6qGS1EGEbLaPxa/e5d0c9166d9be76d27608c74547eb469/PHOTO-2024-07-29-12-25-03.jpg"]}]}
+{
+    "Property-Url": "antonio-maura",
+    "Cover-Img": [
+        "https://images.ctfassets.net/0nbi0p8gb167/fexNyNHEFdAhAdNxygnzX/c85a32cd8e54c91b3036020915b02ae1/PHOTO-2024-07-29-12-25-02.jpg",
+        "https://images.ctfassets.net/0nbi0p8gb167/Xq73FFqZmYrisN5PPquvT/7a026c3d514590c0691d60e1c3676657/PHOTO-2024-07-29-12-25-02_2_.jpg",
+        "https://images.ctfassets.net/0nbi0p8gb167/5lmkcbHqRW3m3O5P6NcwZK/d64f506889b6b4c9bc1d395b05e5f7e6/PHOTO-2024-07-29-12-25-02_1_.jpg"
+    ],
+    "Barrio": "Jerónimos",
+    "Property": {
+        "Title": "Antonio Maura",
+        "Description": "Vivienda cuadrada y luminosa de 291 m2, situada en la tercera planta de un edificio moderno en el prestigioso barrio de Jerónimos con terraza a la calle de Méndez Núñez, que nos permite disfrutar de sus bonitas vistas con tranquilidad.\nLa vivienda ha sido reformada y amueblada con calidad y diseño moderno.\nLa distribución es la siguiente: hall de entrada que nos conduce a una amplia zona social con salón-comedor, sala de estar, cocina abierta con isla, todo con acceso a la terraza.  Un aseo de invitados dará uso a esta zona de día.\nLa zona de noche se compone de 4 dormitorios dobles en suite.\nPlaza de Garaje y portero en la finca\n",
+        "Price": {
+            "Price": "5100000",
+            "Ibis": "0",
+            "Precio Comunidad": "0"
+        }
+    },
+    "Amentities": {
+        "AC": true,
+        "Heating": true,
+        "Rooftop": false,
+        "Furnished": true,
+        "Portero": true,
+        "Trastero": false,
+        "Elevator": true,
+        "Parking": true
+    },
+    "Characteristics": {
+        "Tipo de Propiedad": "Residencial",
+        "Area de Estar": "281",
+        "Dormitorios": "4",
+        "Baños": "4",
+        "Patios": "1",
+        "Balcones": ""
+    },
+    "Habitaciones-Paginas": [
+        {
+            "Title": "Dormitorios",
+            "Description": "",
+            "Photos": [
+                "//images.ctfassets.net/0nbi0p8gb167/1pECuvMZ6qGS1EGEbLaPxa/e5d0c9166d9be76d27608c74547eb469/PHOTO-2024-07-29-12-25-03.jpg"
+            ]
+        }
+    ]
+}
