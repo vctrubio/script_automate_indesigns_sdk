@@ -202,5 +202,5 @@ function main() {
     firePropertyImageDir(jsonObject);
 }
 
-
+//node ./js-create-dir.js 
 main()
