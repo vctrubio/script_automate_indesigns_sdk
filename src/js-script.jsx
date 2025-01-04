@@ -76,23 +76,23 @@ function downloadImage(url, localPath) {
 function styleTable(table) {
     try {
         // First remove all table borders
-
         for (var i = 0; i < table.cells.length; i++) {
             var cell = table.cells[i];
 
-            // Clear all borders
+            // Clear all borders except bottom
             cell.topEdgeStrokeWeight = "0pt";
             cell.leftEdgeStrokeWeight = "0pt";
-            if (i > 0) {
-                cell.rightEdgeStrokeWeight = "0pt";
-            }
+            cell.rightEdgeStrokeWeight = "0pt";
 
+            // Add bottom border to each cell
             cell.bottomEdgeStrokeWeight = "0.5pt";
+            cell.bottomEdgeStrokeColor = app.activeDocument.swatches.item("Black");
         }
     } catch (e) {
         alert("Warning: Could not apply table styling: " + e.message);
     }
 }
+// ... existing code ...
 
 function createCharacteristicsTable(page, textFrame, characteristics) {
     var keys = [];

@@ -1,7 +1,8 @@
-all: apple
+all: prod
 
 
 prod: 
+	@echo 'hello man'
 	@osascript apple_script/run.scpt && node ./src/save-to-location.js
 
 apple:
