@@ -75,18 +75,22 @@ function downloadImage(url, localPath) {
 
 function styleTable(table) {
     try {
-        // First remove all table borders
+        // Clear all cell borders first
         for (var i = 0; i < table.cells.length; i++) {
             var cell = table.cells[i];
-
-            // Clear all borders except bottom
             cell.topEdgeStrokeWeight = "0pt";
             cell.leftEdgeStrokeWeight = "0pt";
             cell.rightEdgeStrokeWeight = "0pt";
+            cell.bottomEdgeStrokeWeight = "0pt";
+        }
 
-            // Add bottom border to each cell
-            cell.bottomEdgeStrokeWeight = "0.5pt";
-            cell.bottomEdgeStrokeColor = app.activeDocument.swatches.item("Black");
+        // Add bottom border to each row
+        for (var i = 0; i < table.rows.length; i++) {
+            var row = table.rows[i];
+            for (var j = 0; j < row.cells.length; j++) {
+                row.cells[j].bottomEdgeStrokeWeight = "0.5pt";
+                row.cells[j].bottomEdgeStrokeColor = app.activeDocument.swatches.item("Black");
+            }
         }
     } catch (e) {
         alert("Warning: Could not apply table styling: " + e.message);
