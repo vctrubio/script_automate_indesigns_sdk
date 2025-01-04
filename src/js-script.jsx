@@ -3,7 +3,8 @@ var INDESIGN_SCRIPTS_PATH = "/Users/trtp/Library/Preferences/Adobe InDesign/Vers
 var dirPath = "~/Desktop/indesign_script/";
 var filePath = File(dirPath + "Template101.indd");
 var jsonFilePath = File(dirPath + "json-data/template-test.json");
-
+var TABLE_BORDER_WEIGHT = "0.5pt";
+var FICHA = 'padilla';
 var coverImg = "~/Desktop/x-photos/a.jpeg";
 var extraImg = "~/Desktop/x-photos/b.jpeg";
 
@@ -84,19 +85,23 @@ function styleTable(table) {
             cell.bottomEdgeStrokeWeight = "0pt";
         }
 
-        // Add bottom border to each row
+        // Add bottom border to each row and column border
         for (var i = 0; i < table.rows.length; i++) {
             var row = table.rows[i];
             for (var j = 0; j < row.cells.length; j++) {
-                row.cells[j].bottomEdgeStrokeWeight = "0.5pt";
-                row.cells[j].bottomEdgeStrokeColor = app.activeDocument.swatches.item("Black");
+                // // Add bottom border
+                row.cells[j].bottomEdgeStrokeWeight= TABLE_BORDER_WEIGHT;
+
+                // border column middles
+                if (j === 0 && row.cells.length > 1) {
+                    row.cells[j].rightEdgeStrokeWeight = TABLE_BORDER_WEIGHT;
+                }
             }
         }
     } catch (e) {
         alert("Warning: Could not apply table styling: " + e.message);
     }
 }
-// ... existing code ...
 
 function createCharacteristicsTable(page, textFrame, characteristics) {
     var keys = [];
@@ -317,7 +322,7 @@ function getAllProperties() {
 
 // Modify loadJsonData to use getPropertyById
 function loadJsonData() {
-    var propertyUrl = "alaya"; // You might want to make this configurable
+    var propertyUrl = FICHA;
     return getPropertyById(propertyUrl);
 }
 
