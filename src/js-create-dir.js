@@ -198,7 +198,7 @@ function downloadImage(url, outputPath) {
 
 function main() {
     jsonObject = getJsonType(jsonFilePath);
-    // createDir(dirPropertiesName);
+    createDir(dirPropertiesName);
     firePropertyImageDir(jsonObject);
 }
 

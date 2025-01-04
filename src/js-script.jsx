@@ -105,6 +105,7 @@ function createCharacteristicsTable(page, textFrame, characteristics) {
         }
     }
 
+
     if (keys.length > 0) {
         var tableFrame = page.textFrames.add();
         tableFrame.geometricBounds = textFrame.geometricBounds;
@@ -183,17 +184,14 @@ function processImages(page, placeholderValues) {
 }
 
 function styleImage(rectangle) {
-    // Fit image to frame
+    const borderRadius = '16px';
+
     rectangle.fit(FitOptions.FILL_PROPORTIONALLY);
-
-    const borderRadius = '42px';
-
     try {
         // Remove any border
         rectangle.strokeWeight = 0; // Set stroke weight to 0
         rectangle.strokeColor = "None"; // Remove stroke color
 
-        // Set corner radius to 42 pixels for all corners
         rectangle.topLeftCornerOption = CornerOptions.ROUNDED_CORNER;
         rectangle.topRightCornerOption = CornerOptions.ROUNDED_CORNER;
         rectangle.bottomLeftCornerOption = CornerOptions.ROUNDED_CORNER;
