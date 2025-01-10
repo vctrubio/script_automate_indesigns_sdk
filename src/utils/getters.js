@@ -84,6 +84,7 @@ function getPropertyByIdV2(propertyDir, jsonFile) {
 
         const TMP_IMG = "~/Desktop/x-photos/a.jpeg";
         return {
+            "{{Property-Url}}": propertyData.propertyUrl,
             "{{Title}}": propertyData.Property.Title,
             "{{Cover-Img}}": TMP_IMG,
             "{{Extra-Img}}": TMP_IMG,

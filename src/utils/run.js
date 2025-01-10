@@ -121,17 +121,17 @@ function processDocument(doc, placeholderValues) {
     }
 }
 
-function saveAndCloseDocument(doc, propertyUrl, propertyDir) {
+function saveAndCloseDocument(doc, propertyUrl) {
+    const propertyDir = '~/Desktop/indesign_script/test-properties/' + propertyUrl + '/'
 
-    var tmpDir = "/fichas-stash/"
     // Save InDesign file
-    var outputFilePath = CONFIG.DIR_PATH + tmpDir + propertyUrl + ".indd";
+    var outputFilePath = propertyDir + propertyUrl + ".indd";
     
     // const outputFilePath = tmpDir + ".indd"
     doc.save(new File(outputFilePath));
 
     // Export PDF
-    var pdfPath = CONFIG.DIR_PATH + tmpDir + propertyUrl + ".pdf";
+    var pdfPath = propertyDir + propertyUrl + ".pdf";
     // const pdfPath = tmpDir + '.pdf'
     var pdfFile = new File(pdfPath);
 
@@ -146,7 +146,7 @@ function saveAndCloseDocument(doc, propertyUrl, propertyDir) {
 
     // Close the document
     doc.close(SaveOptions.NO);
-    alert("Files saved:\nInDesign: " + outputFilePath + "\nPDF: " + pdfPath);
+    // alert("Files saved:\nInDesign: " + propertyDir);
 }
 
 
@@ -158,8 +158,8 @@ function run(jsonTemplateFile, fileValues) {
 
 function runv2(jsonTemplateFile, property, propertyDir) {
     var doc = app.open(jsonTemplateFile);
-    processDocument(doc, property, propertyDir);
-    saveAndCloseDocument(doc, property["{{Title}}"]);
+    processDocument(doc, property);
+    saveAndCloseDocument(doc, property["{{Property-Url}}"]);
 }
 
 $.global.run = run

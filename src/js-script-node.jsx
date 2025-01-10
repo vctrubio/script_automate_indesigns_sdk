@@ -13,7 +13,6 @@ function main() {
         app.open(FILE_PATH)
         const propertyDir = (ROOT_PROPERTY_DIR + propertyUrl + '/');
         const property = getPropertyByIdV2(propertyDir, READ_JSON_FILE_NAME)
-        alert(propertyDir)
         runv2(FILE_PATH, property, propertyDir)
     } else {
         alert("No valid URL.");
