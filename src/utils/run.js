@@ -1,3 +1,5 @@
+#include "style.js"
+
 function createCharacteristicsTable(page, textFrame, characteristics) {
     var keys = [];
     var values = [];
@@ -119,7 +121,7 @@ function processDocument(doc, placeholderValues) {
     }
 }
 
-function saveAndCloseDocument(doc, propertyUrl) {
+function saveAndCloseDocument(doc, propertyUrl, propertyDir) {
 
     var tmpDir = "/fichas-stash/"
     // Save InDesign file
@@ -144,12 +146,12 @@ function saveAndCloseDocument(doc, propertyUrl) {
 
     // Close the document
     doc.close(SaveOptions.NO);
-    // alert("Files saved:\nInDesign: " + outputFilePath + "\nPDF: " + pdfPath);
+    alert("Files saved:\nInDesign: " + outputFilePath + "\nPDF: " + pdfPath);
 }
 
 
-function run(filePath, fileValues) {
-    var doc = app.open(filePath);
+function run(jsonTemplateFile, fileValues) {
+    var doc = app.open(jsonTemplateFile);
     processDocument(doc, fileValues);
     saveAndCloseDocument(doc, fileValues["{{Title}}"]);
 }

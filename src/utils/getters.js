@@ -69,9 +69,7 @@ function getPropertyById(propertyUrl) {
     }
 }
 
-function getPropertyByIdV2(propertyDir, jsonFile, propertyUrl) {
-    // alert(propertyDir)
-
+function getPropertyByIdV2(propertyDir, jsonFile) {
     try {
         const propertyJsonFile = File(propertyDir + jsonFile)
         propertyJsonFile.open('r');
@@ -79,9 +77,24 @@ function getPropertyByIdV2(propertyDir, jsonFile, propertyUrl) {
         propertyJsonFile.close();
 
         if (!jsonString)
-            alert('error not found')
+            throw new Error("Invalid READ_JSON_FILE_NAME data");
 
-        return null;
+        // Parse the JSON string into an actual object
+        var propertyData = parseJSON(jsonString);
+
+        const TMP_IMG = "~/Desktop/x-photos/a.jpeg";
+        return {
+            "{{Title}}": propertyData.Property.Title,
+            "{{Cover-Img}}": TMP_IMG,
+            "{{Extra-Img}}": TMP_IMG,
+            "{{Amentities}}": propertyData.Amentities || {},
+            "{{Description}}": propertyData.Property.Description,
+            "{{Characteristics}}": propertyData.Characteristics,
+            "{{Precio}}": formatPrice(propertyData.Property.Price.Price),
+            "{{Ibis-Mas}}": formatIbis(propertyData.Property.Price.Ibis),
+            "{{Property-Url}}": propertyData["Property-Url"]
+        }
+
     } catch (e) {
         alert("Error reading or parsing properties file: " + e.message);
         return null;
