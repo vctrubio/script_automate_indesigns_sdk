@@ -3,8 +3,8 @@ const fs = require('fs');
 const prompt = require('prompt-sync')();
 const { dirPropertiesName, JSON_FILENAME } = require('./utils/nodeConfig');
 
-const ROOT_DIR = __dirname;
-const jsonFilePath = ROOT_DIR + '../json-data/properties-data.json' // Make sure exist
+// const ROOT_DIR = __dirname + '../'
+const jsonFilePath = 'json-data/properties-data.json' // Make sure exist
 
 /*
 {
