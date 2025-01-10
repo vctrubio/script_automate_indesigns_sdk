@@ -124,10 +124,13 @@ function saveAndCloseDocument(doc, propertyUrl) {
     var tmpDir = "/fichas-stash/"
     // Save InDesign file
     var outputFilePath = CONFIG.DIR_PATH + tmpDir + propertyUrl + ".indd";
+    
+    // const outputFilePath = tmpDir + ".indd"
     doc.save(new File(outputFilePath));
 
     // Export PDF
     var pdfPath = CONFIG.DIR_PATH + tmpDir + propertyUrl + ".pdf";
+    // const pdfPath = tmpDir + '.pdf'
     var pdfFile = new File(pdfPath);
 
     // PDF export preferences

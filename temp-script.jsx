@@ -1,0 +1,16 @@
+
+        #include "./utils/config.js"
+        #include "./utils/getters.js"
+        #include "./utils/style.js"
+        #include "./utils/download.js"
+        #include "./utils/run.js"
+
+        // Set up the configuration
+        CONFIG.FILE_PATH = File("/Users/trtp/Desktop/indesign_script/Template101.indd");
+        CONFIG.CURRENT_PROPERTY = "lagasca-salamanca";
+
+        // Execute the run function
+        var doc = app.open(CONFIG.FILE_PATH);
+        processDocument(doc, {"Property-Url":"lagasca-salamanca","Cover-Img":"test-properties/lagasca-salamanca/Images/a.jpeg","Barrio":"Salamanca","Property":{"Title":"Lagasca Salamanca","Description":"Piso de 92 m2 situado en un elegante edificio de la calle\nLagasca, una de las vías más apacibles del distinguido\nbarrio de Salamanca. Este encantador apartamento se\nubica en la séptima planta y cuenta con techos de 5\nmetros de altura, creando una sensación de amplitud y\nluminosidad excepcionales. La distribución interior consta\nde una cocina integrada con salón comedor, un dormitorio\nprincipal en suite con vestidor y un segundo dormitorio\nacompañado de otro baño completo.\nEsta residencia ha sido renovada con materiales de alta\ncalidad y un exquisito diseño, ofreciendo un ambiente\nmoderno y acogedor. Se vende completamente amueblada,\nproporcionando una oportunidad única para aquellos que\nbuscan adquirir una propiedad lista para habitar.","Price":{"Price":"1100000","Ibis":"0","Precio Comunidad":"0"}},"Amentities":{"AC":true,"Heating":true,"Rooftop":false,"Furnished":true,"Portero":true,"Trastero":false,"Elevator":true,"Parking":false},"Characteristics":{"Tipo de Propiedad":"Residencial","Area de Estar":"92","Dormitorios":"2","Baños":"2","Patios":"","Balcones":"2"},"Habitaciones-Paginas":[{"Title":"Dormitorios y Baños","Description":"El dormitorio principal, en suite, es un espacio acogedor y\nprivado donde los propietarios pueden retirarse para\ndescansar y relajarse. Además de contar con un baño\ncompleto incorporado, este dormitorio está equipado con un\namplio vestidor que proporciona espacio de almacenamiento\nadicional y añade un toque de lujo al espacio.\nEl segundo dormitorio, pensado como una habitación de\ninvitados versátil, también puede adaptarse fácilmente para su\nuso como despacho u oficina en casa.","Photos":["//images.ctfassets.net/0nbi0p8gb167/62KZQwRSQ6uAQWxbS0QgF2/8020f5c4f9da735f7a84e56de6d6463c/WhatsApp_Image_2024-09-24_at_8.12.51_PM__1_.jpeg","//images.ctfassets.net/0nbi0p8gb167/1jwIrjHH904HGI7K63QsO0/4c677388979598fec43d799efbf543d4/WhatsApp_Image_2024-09-24_at_8.12.47_PM__2_.jpeg","//images.ctfassets.net/0nbi0p8gb167/3cDauXOoA1eppC2csKEF25/2be2d66915a7ff5fc4a8ca0939c1842f/WhatsApp_Image_2024-09-24_at_8.12.47_PM__3_.jpeg","//images.ctfassets.net/0nbi0p8gb167/3oUI2aKRd04NCpFZ3jN0U6/81f11b34353d9c8594a254a0db897229/WhatsApp_Image_2024-09-24_at_8.12.46_PM__2_.jpeg","//images.ctfassets.net/0nbi0p8gb167/3YxtduxO7Bl08FLhSPmweE/4e1f07f0c5171ece886162ae56253923/WhatsApp_Image_2024-09-24_at_8.12.46_PM__6_.jpeg","//images.ctfassets.net/0nbi0p8gb167/7mmTQ7rs1BNwwpfjKJI6s9/ddf7bb7b2b50056fee9ea4531d2fd251/WhatsApp_Image_2024-09-24_at_8.12.46_PM__5_.jpeg"]}]});
+        saveAndCloseDocument(doc, "lagasca-salamanca");
+    

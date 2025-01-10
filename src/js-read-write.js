@@ -1,6 +1,9 @@
 const { dirPropertiesName, JSON_FILENAME } = require('./utils/nodeConfig');
 const fs = require('fs');
 const path = require('path');
+const { exec } = require('child_process');
+const util = require('util');
+const execPromise = util.promisify(exec);
 
 function listSubDirectories(dirPath) {
     try {
@@ -50,8 +53,7 @@ function processProperty(urlName) {
             propertyData['Cover-Img'] = path.join(imagesDir, 'a.jpeg');
         }
 
-        console.log(`Successfully processed property: ${urlName}`);
-        console.log(propertyData)
+        // console.log(propertyData)
         return propertyData;
     } catch (error) {
         console.error(`Error processing property ${urlName}:`, error.message);
@@ -59,48 +61,76 @@ function processProperty(urlName) {
     }
 }
 
+async function processPropertyWithInDesign(propertyDir, propertyData) {
+    const propertyUrl = propertyData['Property-Url'];
+    const absolutePropertyDir = path.resolve(propertyDir);
+    
+    try {
+        const { stdout, stderr } = await execPromise(
+            `osascript apple_script/noderunner.scpt "${propertyUrl}" "${absolutePropertyDir}"`
+        );
+        
+        if (stderr) {
+            throw new Error(stderr);
+        }
+        
+        return stdout.trim() === 'success';
+    } catch (error) {
+        console.error(`❌ Failed to process ${propertyUrl}:`, error.message);
+        return false;
+    }
+}
+
 async function main() {
     const subdirs = listSubDirectories(dirPropertiesName);
 
     if (subdirs.length === 0) {
-        console.log('No subdirectories found');
+        console.log('❌ No subdirectories found');
         return;
     }
 
-    console.log('Processing properties...');
-    const processedProperties = [];
+    console.log('🚀 Starting property processing...\n');
     
+    let successCount = 0;
+    let failCount = 0;
+    const successfulProperties = [];
+
     for (const dir of subdirs) {
+        const propertyDir = path.join(dirPropertiesName, dir);
         const propertyData = processProperty(dir);
-        if (propertyData) {
-            processedProperties.push(propertyData);
+        
+        if (!propertyData) {
+            console.log(`⚠️  Skipping ${dir} - Invalid or missing data`);
+            failCount++;
+            continue;
+        }
+
+        process.stdout.write(`⏳ Processing ${propertyData['Property-Url']}...`);
+        
+        const success = await processPropertyWithInDesign(propertyDir, propertyData);
+        
+        if (success) {
+            process.stdout.write('\r✅ Completed ' + propertyData['Property-Url'] + ' '.repeat(20) + '\n');
+            successCount++;
+            successfulProperties.push(propertyData['Property-Url']);
+        } else {
+            process.stdout.write('\r❌ Failed ' + propertyData['Property-Url'] + ' '.repeat(20) + '\n');
+            failCount++;
         }
     }
 
-    if (processedProperties.length === 0) {
-        console.log('No valid properties found to process');
-        return;
+    console.log('\n📊 Summary:');
+    console.log(`✅ Successfully processed: ${successCount}`);
+    console.log(`❌ Failed: ${failCount}`);
+    console.log(`📝 Total properties: ${subdirs.length}`);
+    
+    if (successfulProperties.length > 0) {
+        console.log('\n✨ Successfully processed properties:');
+        successfulProperties.forEach((prop, index) => {
+            console.log(`${index + 1}. ${prop}`);
+        });
     }
-
-    console.log(`Successfully processed ${processedProperties.length} properties`);
-    console.log('Preparing InDesign script...');
-    
-    // Copy the InDesign script to the Scripts Panel
-    const scriptSource = path.join(process.cwd(), 'src', 'js-script.jsx');
-    const scriptDest = '/Users/trtp/Library/Preferences/Adobe InDesign/Version 20.0/en_US/Scripts/Scripts Panel/js-script.jsx';
-    
-    fs.copyFileSync(scriptSource, scriptDest);
-    console.log('InDesign script copied to Scripts Panel');
-    
-    // Run the AppleScript to execute the InDesign script
-    const { exec } = require('child_process');
-    exec('osascript apple_script/run.scpt', (error, stdout, stderr) => {
-        if (error) {
-            console.error('Error running InDesign script:', error);
-            return;
-        }
-        console.log('InDesign script executed successfully');
-    });
+    console.log(); // Empty line at the end
 }
 
-main();
+main().catch(console.error);
