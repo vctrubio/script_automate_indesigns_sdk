@@ -69,6 +69,26 @@ function getPropertyById(propertyUrl) {
     }
 }
 
+function getPropertyByIdV2(propertyDir, jsonFile, propertyUrl) {
+    // alert(propertyDir)
+
+    try {
+        const propertyJsonFile = File(propertyDir + jsonFile)
+        propertyJsonFile.open('r');
+        const jsonString = propertyJsonFile.read();
+        propertyJsonFile.close();
+
+        if (!jsonString)
+            alert('error not found')
+
+        return null;
+    } catch (e) {
+        alert("Error reading or parsing properties file: " + e.message);
+        return null;
+    }
+}
+
 // Export the function
 $.global.getPropertyById = getPropertyById;
+$.global.getPropertyByIdV2 = getPropertyByIdV2;
 

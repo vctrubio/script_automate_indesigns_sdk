@@ -59,14 +59,14 @@ function processProperty(urlName) {
     }
 }
 
-async function processPropertyWithInDesign(propertyDir, propertyData) {
-    console.log('helooworld..............')
+async function processPropertyWithInDesign(propertyData) {
     const propertyUrl = propertyData['Property-Url'];
-    const absolutePropertyDir = path.resolve(propertyDir);
+
+    console.log('helooworld..............', propertyUrl);
 
     try {
         const { stdout, stderr } = await execPromise(
-            `osascript apple_script/noderunner.scpt "${propertyUrl}" "${absolutePropertyDir}"`
+            `osascript apple_script/noderunner.scpt "${propertyUrl.replace(/"/g, '\\"')}"`
         );
 
         if (stderr) {
@@ -106,7 +106,7 @@ async function main() {
 
         process.stdout.write(`⏳ Processing ${propertyData['Property-Url']}...\n`);
 
-        const success = await processPropertyWithInDesign(propertyDir, propertyData);
+        const success = await processPropertyWithInDesign(propertyData);
 
         if (success) {
             process.stdout.write('\r✅ Completed ' + propertyData['Property-Url']+ '\n');

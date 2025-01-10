@@ -13,6 +13,7 @@ on run argv
         end tell
         return "success"
     on error errorMessage
+        log "Error running script: " & errorMessage
         return "error: " & errorMessage
     end try
 end run
