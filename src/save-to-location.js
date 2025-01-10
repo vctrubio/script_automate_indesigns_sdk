@@ -5,6 +5,7 @@ const path = require('path');
 const INDESIGN_SCRIPTS_PATH = '/Users/trtp/Library/Preferences/Adobe InDesign/Version 20.0/en_US/Scripts/Scripts Panel';
 const SOURCE_DIR = path.join(process.env.HOME, 'Desktop/indesign_script/src');
 const SCRIPT_NAME = 'js-script.jsx';
+// const SCRIPT_NAME = 'js-script-node.jsx';
 
 // Source and destination paths
 const sourcePath = path.join(SOURCE_DIR, SCRIPT_NAME);

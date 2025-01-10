@@ -48,12 +48,10 @@ function processProperty(urlName) {
         }
 
         // Update image paths to be absolute
-        if (propertyData['Cover-Img']) {
-            const imagesDir = path.join(propertyDir, 'Images');
-            propertyData['Cover-Img'] = path.join(imagesDir, 'a.jpeg');
-        }
-
-        // console.log(propertyData)
+        const imagesDir = path.join(propertyDir, 'images');
+        propertyData['Cover-Img'] = path.join(imagesDir, 'a.jpeg');
+        propertyData['Extra-Img'] = path.join(imagesDir, 'b.jpeg');
+        
         return propertyData;
     } catch (error) {
         console.error(`Error processing property ${urlName}:`, error.message);
@@ -62,18 +60,19 @@ function processProperty(urlName) {
 }
 
 async function processPropertyWithInDesign(propertyDir, propertyData) {
+    console.log('helooworld..............')
     const propertyUrl = propertyData['Property-Url'];
     const absolutePropertyDir = path.resolve(propertyDir);
-    
+
     try {
         const { stdout, stderr } = await execPromise(
             `osascript apple_script/noderunner.scpt "${propertyUrl}" "${absolutePropertyDir}"`
         );
-        
+
         if (stderr) {
             throw new Error(stderr);
         }
-        
+
         return stdout.trim() === 'success';
     } catch (error) {
         console.error(`❌ Failed to process ${propertyUrl}:`, error.message);
@@ -90,40 +89,40 @@ async function main() {
     }
 
     console.log('🚀 Starting property processing...\n');
-    
+
     let successCount = 0;
     let failCount = 0;
     const successfulProperties = [];
 
-    for (const dir of subdirs) {
+    for (const dir of subdirs.slice(0, 2)) {
         const propertyDir = path.join(dirPropertiesName, dir);
         const propertyData = processProperty(dir);
-        
+
         if (!propertyData) {
             console.log(`⚠️  Skipping ${dir} - Invalid or missing data`);
             failCount++;
             continue;
         }
 
-        process.stdout.write(`⏳ Processing ${propertyData['Property-Url']}...`);
-        
+        process.stdout.write(`⏳ Processing ${propertyData['Property-Url']}...\n`);
+
         const success = await processPropertyWithInDesign(propertyDir, propertyData);
-        
+
         if (success) {
-            process.stdout.write('\r✅ Completed ' + propertyData['Property-Url'] + ' '.repeat(20) + '\n');
+            process.stdout.write('\r✅ Completed ' + propertyData['Property-Url']+ '\n');
             successCount++;
             successfulProperties.push(propertyData['Property-Url']);
         } else {
-            process.stdout.write('\r❌ Failed ' + propertyData['Property-Url'] + ' '.repeat(20) + '\n');
+            process.stdout.write('\r❌ Failed ' + propertyData['Property-Url']+ '\n');
             failCount++;
         }
     }
 
-    console.log('\n📊 Summary:');
-    console.log(`✅ Successfully processed: ${successCount}`);
-    console.log(`❌ Failed: ${failCount}`);
-    console.log(`📝 Total properties: ${subdirs.length}`);
-    
+    // console.log('\n📊 Summary:');
+    // console.log(`✅ Successfully processed: ${successCount}`);
+    // console.log(`❌ Failed: ${failCount}`);
+    // console.log(`📝 Total properties: ${subdirs.length}`);
+
     if (successfulProperties.length > 0) {
         console.log('\n✨ Successfully processed properties:');
         successfulProperties.forEach((prop, index) => {
