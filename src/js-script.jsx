@@ -3,6 +3,7 @@
 #include "./utils/getters.js"
 #include "./utils/style.js"
 #include "./utils/download.js"
+#include "./utils/run.js"
 
 function loadJsonData() {
     var propertyUrl = CONFIG.FICHA;
@@ -132,7 +133,7 @@ function processDocument(doc, placeholderValues) {
 
 function saveAndCloseDocument(doc, propertyUrl) {
 
-    var tmpDir = "/fichas-stash/ficha-"
+    var tmpDir = "/fichas-stash/"
     // Save InDesign file
     var outputFilePath = CONFIG.DIR_PATH + tmpDir + propertyUrl + ".indd";
     doc.save(new File(outputFilePath));
@@ -153,12 +154,6 @@ function saveAndCloseDocument(doc, propertyUrl) {
     // Close the document
     doc.close(SaveOptions.NO);
     // alert("Files saved:\nInDesign: " + outputFilePath + "\nPDF: " + pdfPath);
-}
-
-function run(filePath, fileValues) {
-    var doc = app.open(filePath);
-    processDocument(doc, fileValues);
-    saveAndCloseDocument(doc, fileValues["{{Title}}"]);
 }
 
 function main() {
