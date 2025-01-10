@@ -131,12 +131,13 @@ function processDocument(doc, placeholderValues) {
 }
 
 function saveAndCloseDocument(doc, propertyUrl) {
+
+    var tmpDir = "/fichas-stash/ficha-"
     // Save InDesign file
-    var outputFilePath = CONFIG.DIR_PATH + "/fichas-stash/ficha-" + propertyUrl + ".indd";
+    var outputFilePath = CONFIG.DIR_PATH + tmpDir + propertyUrl + ".indd";
     doc.save(new File(outputFilePath));
 
     // Export PDF
-    var tmpDir = "/fichas-stash/ficha-"
     var pdfPath = CONFIG.DIR_PATH + tmpDir + propertyUrl + ".pdf";
     var pdfFile = new File(pdfPath);
 
@@ -151,7 +152,13 @@ function saveAndCloseDocument(doc, propertyUrl) {
 
     // Close the document
     doc.close(SaveOptions.NO);
-    alert("Files saved:\nInDesign: " + outputFilePath + "\nPDF: " + pdfPath);
+    // alert("Files saved:\nInDesign: " + outputFilePath + "\nPDF: " + pdfPath);
+}
+
+function run(filePath, fileValues) {
+    var doc = app.open(filePath);
+    processDocument(doc, fileValues);
+    saveAndCloseDocument(doc, fileValues["{{Title}}"]);
 }
 
 function main() {
@@ -167,9 +174,7 @@ function main() {
         return;
     }
 
-    var doc = app.open(CONFIG.FILE_PATH);
-    processDocument(doc, placeholderValues);
-    saveAndCloseDocument(doc, placeholderValues["{{Title}}"]);
+    run(CONFIG.FILE_PATH, placeholderValues)
 }
 
 main();

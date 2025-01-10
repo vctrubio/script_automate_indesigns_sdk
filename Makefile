@@ -12,5 +12,9 @@ save:
 	node ./src/save-to-location.js
 
 
+read:
+	@node ./src/js-read-write.js
+
+
 rmf:
 	rm fichas-stash/*

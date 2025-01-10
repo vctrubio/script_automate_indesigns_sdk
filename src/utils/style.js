@@ -1,7 +1,7 @@
 #include "config.js"
 
 function styleTable(table) {
-    alert("Styling table..."); // Debug alert
+    // alert("Styling table..."); // Debug alert
     try {
         // Clear all cell borders first
         for (var i = 0; i < table.cells.length; i++) {
@@ -25,7 +25,7 @@ function styleTable(table) {
                 }
             }
         }
-        alert("Table styled successfully!"); // Debug alert
+        // alert("Table styled successfully!"); // Debug alert
     } catch (e) {
         alert("Warning: Could not apply table styling: " + e.message);
     }
