@@ -11,6 +11,8 @@ apple:
 save:
 	node ./src/save-to-location.js
 
+create:
+	@node ./src/js-create-dir.js
 
 read:
 	@node ./src/js-read-write.js
