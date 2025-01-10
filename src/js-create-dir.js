@@ -1,12 +1,10 @@
 const https = require('https');
 const fs = require('fs');
 const prompt = require('prompt-sync')();
+const { dirPropertiesName, JSON_FILENAME } = require('./utils/nodeConfig');
 
-const ROOT_DIR = __dirname + '/../';
-
-const NAME = 'JSON-Fetch-Contentful.json' // for forward compatibility
-const jsonFilePath = ROOT_DIR + 'json-data/properties-data.json' // Make sure exist
-const dirPropertiesName = 'test-properties/'; //where to pout the property dir information
+const ROOT_DIR = __dirname;
+const jsonFilePath = ROOT_DIR + '../json-data/properties-data.json' // Make sure exist
 
 /*
 {
@@ -27,16 +25,14 @@ function getJsonType(jsonFilePath) {
 
 /*
 create dir and place property by propertyIdDir - read the documenation.md
-ROOT_DIR/properties/property-url/files,dir
-file1: property-json
+ROOT_DIR/dirPropertiesName/property-url/files,dir
+file1: JSON_FILENAME
 dir1: Images- property image download folder - for uplodaing to indesign
 */
 function createDir(dirName = dirPropertiesName) {
     const jsonObject = getJsonType(jsonFilePath);
 
     try {
-        console.log('test.... ', dirName)
-        // return null
         if (!fs.existsSync(`${dirName}`)) {
             fs.mkdirSync(`${dirName}`);
         }
@@ -70,7 +66,7 @@ function createDir(dirName = dirPropertiesName) {
                 }
             }
 
-            const filePath = `${propertyDir}/${NAME}`;
+            const filePath = `${propertyDir}/${JSON_FILENAME}`;
             const propertyJson = JSON.stringify(property);
             if (fs.existsSync(filePath)) {
                 fs.unlinkSync(filePath); // Delete the existing file
@@ -145,7 +141,7 @@ async function firePropertyImageDir(jsonObject) {
             let letter = 'a'.charCodeAt(0);
             let skip = 0;
 
-            console.log('\x1b[34m%s\x1b[0m', ' createImgaes :PITSTOP:')
+            console.log('\x1b[34m%s\x1b[0m', ' createImgaes :PITSTOP:', propertyDir)
             for (const img of getImages) {
                 if (skip > 0) continue
                 const letterTransform = String.fromCharCode(letter);
@@ -199,7 +195,7 @@ function downloadImage(url, outputPath) {
 
 function main() {
     jsonObject = getJsonType(jsonFilePath);
-    // createDir();
+    createDir();
     firePropertyImageDir(jsonObject);
 }
 
