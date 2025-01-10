@@ -156,4 +156,11 @@ function run(jsonTemplateFile, fileValues) {
     saveAndCloseDocument(doc, fileValues["{{Title}}"]);
 }
 
+function runv2(jsonTemplateFile, property, propertyDir) {
+    var doc = app.open(jsonTemplateFile);
+    processDocument(doc, property, propertyDir);
+    saveAndCloseDocument(doc, property["{{Title}}"]);
+}
+
 $.global.run = run
+$.global.runv2 = runv2
