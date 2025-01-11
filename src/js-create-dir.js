@@ -78,9 +78,9 @@ function createDir() {
             }
 
             const filePath = path.join(propertyDir, NAME);
-            const propertyJson = JSON.stringify(property);
+            const propertyJson = JSON.stringify(property, null, 2); // Format JSON with 2 spaces indentation
             if (fs.existsSync(filePath)) {
-                fs.unlinkSync(filePath); // Delete the existing file
+                fs.unlinkSync(filePath); 
             }
             fs.writeFileSync(filePath, propertyJson);
             fs.chmodSync(filePath, '444'); // Set file to read-only for the user
