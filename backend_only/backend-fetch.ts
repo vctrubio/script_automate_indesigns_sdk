@@ -1,8 +1,8 @@
 import { parsePropertyFromContentful } from "./backend-parsing";
-import { Property } from "./backend-types";
-
 const backendLogic = require('./backend-logic');
 const fs = require('fs');
+const path = require('path');
+//.env located in root directoy. call make fetch instead
 
 function convertToTemplate(property: any) {
   return {
@@ -62,10 +62,18 @@ async function writeToJson() {
     "entity": "properties",
     "length": formattedProperties.length,
     "properties": formattedProperties
+  };
+
+  const outputDir = path.join(__dirname, '../data-json');
+  const outputPath = path.join(outputDir, 'properties-data.json');
+
+  // Ensure the directory exists
+  if (!fs.existsSync(outputDir)) {
+    fs.mkdirSync(outputDir, { recursive: true });
   }
 
-  fs.writeFileSync('output.json', JSON.stringify(dataToFile, null, 2));
-  console.log('Data written to output.json');
+  fs.writeFileSync(outputPath, JSON.stringify(dataToFile, null, 2));
+  console.log('Data written to properties-data.json');
 }
 
 writeToJson();

@@ -20,9 +20,11 @@ const relativePath = path.join(__dirname, '..', dirPropertiesName);
 }
 */
 function getJsonType(jsonFilePath) {
+    if (!fs.existsSync(jsonFilePath)) {
+        throw new Error(`File not found: ${jsonFilePath}`);
+    }
     const jsonData = fs.readFileSync(jsonFilePath, 'utf8');
     const jsonObject = JSON.parse(jsonData);
-    // console.log(jsonObject.properties);
     return jsonObject;
 }
 //
@@ -38,7 +40,7 @@ function createDir() {
     const jsonObject = getJsonType(jsonFilePath);
 
     //relative to makefile cmd
-    
+
     try {
         if (!fs.existsSync(relativePath)) {
             fs.mkdirSync(relativePath);
@@ -202,9 +204,17 @@ function downloadImage(url, outputPath) {
 }
 
 function main() {
-    const jsonObject = getJsonType(jsonFilePath);
-    createDir();
-    firePropertyImageDir(jsonObject);
+    try {
+        const jsonObject = getJsonType(jsonFilePath);
+        createDir();
+        firePropertyImageDir(jsonObject);
+    } catch (error) {
+        if (error.message.includes('File not found')) {
+            console.error('Error in main function.........:', error.message);
+        } else {
+            console.error('Unexpected error in main function:', error.message);
+        }
+    }
 }
 
 //node ./js-create-dir.js 

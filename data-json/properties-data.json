@@ -1,8 +1,91 @@
 {
-  "date": "30.12.24",
+  "date": "11.1.25",
   "entity": "properties",
   "length": 12,
   "properties": [
+    {
+      "Property-Url": "padilla",
+      "Cover-Img": [
+        "https://images.ctfassets.net/0nbi0p8gb167/5LyM3mLMRDQfGr9gHaWfax/5d88297193d77153eb78e520b89089f3/Padilla82_16.jpg",
+        "https://images.ctfassets.net/0nbi0p8gb167/A4ybIKznN7AT46lsE4p2X/a96c417a8534f88daaf870839cfb0987/Padilla82_29.jpg",
+        "https://images.ctfassets.net/0nbi0p8gb167/2Qp99W4EBQK50cou66p3C8/62d40100207fbbaa07c883ce4ce66f9d/Padilla82_30.jpg",
+        "https://images.ctfassets.net/0nbi0p8gb167/7wy9qsuW6JinPH8cT4iebt/46d1abc9ac4927cb3b76b93a2fc54bd8/Padilla82_18.jpg",
+        "https://images.ctfassets.net/0nbi0p8gb167/5ZD3V8xcgMiZliKOp72YUS/208582e2aaf343ae45e0b6cf0f87ab8d/Padilla82_44.jpg"
+      ],
+      "Barrio": "Salamanca",
+      "Property": {
+        "Title": "Padilla",
+        "Description": "Esta vivienda situada en la segunda planta de un edificio clásico, ha sido complemente rehabilitada, con calidad y estilo moderno para convertirla en un auténtico hogar familiar.\n\nLa vivienda se distribuye en un hall de entrada, cocina abierta con acceso a un amplio salón-comedor con 2 balcones a la calle y aseo de invitados. La zona de noche cuenta con 3 amplios dormitorios en suite con sus armarios empotrados. El dormitorio principal es también exterior con otro balcón. Un trastero está asignado a este piso. La vivienda se vende amueblada.",
+        "Price": {
+          "Price": "1850000",
+          "Ibis": "0",
+          "Precio Comunidad": "0"
+        }
+      },
+      "Amentities": {
+        "AC": true,
+        "Heating": true,
+        "Rooftop": false,
+        "Furnished": true,
+        "Portero": true,
+        "Trastero": true,
+        "Elevator": true,
+        "Parking": true
+      },
+      "Characteristics": {
+        "Tipo de Propiedad": "Residencial",
+        "Area de Estar": "206",
+        "Dormitorios": "3",
+        "Baños": "3",
+        "Patios": "2",
+        "Balcones": "3"
+      },
+      "Habitaciones-Paginas": [
+        {
+          "Title": "Dormitorios y Baños",
+          "Description": "El piso dispone de 3 dormitorios en suite, el principal con\nacceso a un balcón.",
+          "Photos": [
+            "//images.ctfassets.net/0nbi0p8gb167/4Pzhanijyf3C2A9JfnvJtd/397d4cb65382e4f28ae015589f94dbae/Padilla82_01.jpg",
+            "//images.ctfassets.net/0nbi0p8gb167/1PM4dCZgJkVaeZrlb6fYz3/76cc524a4efdf5709387e013cf91ed7b/Padilla82_11.jpg",
+            "//images.ctfassets.net/0nbi0p8gb167/3k3GaiucgUWKXI8cpQgSsU/2bc59a530e26a1c98e9cd2579e43e30c/Padilla82_49.jpg",
+            "//images.ctfassets.net/0nbi0p8gb167/1hCTV8yRTjx6IeV2NzL2qv/904c15d3f56682cfad15b232e0869447/Padilla82_56.jpg",
+            "//images.ctfassets.net/0nbi0p8gb167/61t5y16iNUspDZFRYJtDBd/fd933fac46e4009bb07626d5d12e7660/Padilla82_68.jpg",
+            "//images.ctfassets.net/0nbi0p8gb167/1TCYpXfFt2Nn37LnujBvhE/6e8866450082916db94e30911ebb0d79/Padilla82_64.jpg",
+            "//images.ctfassets.net/0nbi0p8gb167/4zghZHNeSBapuUwLLKmQJc/f88efacf5a20e6cd33d3a15f17ba71fb/Padilla82_59.jpg"
+          ]
+        }
+      ]
+    },
+    {
+      "Property-Url": "argonsola",
+      "Cover-Img": [
+        "https://images.ctfassets.net/0nbi0p8gb167/1V5izuB2e5dOer1sEB3oLM/0c4ccfb1e0713bdc315a1c0421f99226/PHOTO-2024-07-31-12-16-42.jpg",
+        "https://images.ctfassets.net/0nbi0p8gb167/7b7y1kpcQ63yshwbKNUF2G/26569b88a12a1bb0aabbf289823a997d/PHOTO-2024-07-31-12-16-41__1_.jpg",
+        "https://images.ctfassets.net/0nbi0p8gb167/22pFaZrBLszup4qrUKNgtF/dafc996489aacceb4469ce9e69b7fe43/PHOTO-2024-07-31-12-16-41.jpg",
+        "https://images.ctfassets.net/0nbi0p8gb167/7fU7zCJtXwUaKOrURafb8Y/c2398f87923fd470a0fcc8a43bf5057b/PHOTO-2024-07-31-12-16-42__1_.jpg",
+        "https://images.ctfassets.net/0nbi0p8gb167/1oLN77LuXeBKgE0KBLOWvT/9fcfb8abe6d1bbd21956d3f0e5cf59d7/PHOTO-2024-07-31-12-16-41__2_.jpg"
+      ],
+      "Barrio": "Justicia",
+      "Property": {
+        "Title": "Argonsola",
+        "Description": "Situado en la segunda planta de un edificio señorial, Con 5 balcones a la calle y amplios patios de manzana, tenemos este piso de 361 m2, solo un piso por planta, para reforma total según sus necesidades.\n",
+        "Price": {
+          "Price": "4100000",
+          "Ibis": "0",
+          "Precio Comunidad": "0"
+        }
+      },
+      "Amentities": {},
+      "Characteristics": {
+        "Tipo de Propiedad": "Residencial",
+        "Area de Estar": "361",
+        "Dormitorios": "4",
+        "Baños": "4",
+        "Patios": "4",
+        "Balcones": "5"
+      },
+      "Habitaciones-Paginas": []
+    },
     {
       "Property-Url": "alaya",
       "Cover-Img": [
@@ -324,36 +407,6 @@
       ]
     },
     {
-      "Property-Url": "argonsola",
-      "Cover-Img": [
-        "https://images.ctfassets.net/0nbi0p8gb167/1V5izuB2e5dOer1sEB3oLM/0c4ccfb1e0713bdc315a1c0421f99226/PHOTO-2024-07-31-12-16-42.jpg",
-        "https://images.ctfassets.net/0nbi0p8gb167/7b7y1kpcQ63yshwbKNUF2G/26569b88a12a1bb0aabbf289823a997d/PHOTO-2024-07-31-12-16-41__1_.jpg",
-        "https://images.ctfassets.net/0nbi0p8gb167/22pFaZrBLszup4qrUKNgtF/dafc996489aacceb4469ce9e69b7fe43/PHOTO-2024-07-31-12-16-41.jpg",
-        "https://images.ctfassets.net/0nbi0p8gb167/7fU7zCJtXwUaKOrURafb8Y/c2398f87923fd470a0fcc8a43bf5057b/PHOTO-2024-07-31-12-16-42__1_.jpg",
-        "https://images.ctfassets.net/0nbi0p8gb167/1oLN77LuXeBKgE0KBLOWvT/9fcfb8abe6d1bbd21956d3f0e5cf59d7/PHOTO-2024-07-31-12-16-41__2_.jpg"
-      ],
-      "Barrio": "Justicia",
-      "Property": {
-        "Title": "Argonsola",
-        "Description": "Situado en la segunda planta de un edificio señorial, \nCon 5 balcones a la calle y amplios patios de manzana, tenemos este piso de 361 m2, solo un piso por planta, para reforma total según sus necesidades.\nPrecio de venta demolido: 4.100.000€\n",
-        "Price": {
-          "Price": "4100000",
-          "Ibis": "0",
-          "Precio Comunidad": "0"
-        }
-      },
-      "Amentities": {},
-      "Characteristics": {
-        "Tipo de Propiedad": "Residencial",
-        "Area de Estar": "361",
-        "Dormitorios": "4",
-        "Baños": "4",
-        "Patios": "4",
-        "Balcones": "5"
-      },
-      "Habitaciones-Paginas": []
-    },
-    {
       "Property-Url": "attico-hermosilla",
       "Cover-Img": [
         "https://images.ctfassets.net/0nbi0p8gb167/2ZX6lf1e5pQ3I8OKzZI7IF/5b46615fc9073af73537c35716186e88/PHOTO-2024-09-16-10-11-15_1_.jpg",
@@ -403,59 +456,6 @@
             "//images.ctfassets.net/0nbi0p8gb167/7M6Ezz1PBHAwUeDArlpgUx/d79e068578324dd308719ecb3cb2e453/PHOTO-2024-09-16-10-11-16_3_.jpg",
             "//images.ctfassets.net/0nbi0p8gb167/7a06730zPFOhIVM1flhkNl/dea8f55c4672bef995e9cecb0acaa386/PHOTO-2024-09-16-10-11-16_6_.jpg",
             "//images.ctfassets.net/0nbi0p8gb167/7EmRdhNzdunQEyAFV1eskj/0f30c42294f16496417db2321fd5a550/PHOTO-2024-09-16-10-11-16.jpg"
-          ]
-        }
-      ]
-    },
-    {
-      "Property-Url": "padilla",
-      "Cover-Img": [
-        "https://images.ctfassets.net/0nbi0p8gb167/5LyM3mLMRDQfGr9gHaWfax/5d88297193d77153eb78e520b89089f3/Padilla82_16.jpg",
-        "https://images.ctfassets.net/0nbi0p8gb167/A4ybIKznN7AT46lsE4p2X/a96c417a8534f88daaf870839cfb0987/Padilla82_29.jpg",
-        "https://images.ctfassets.net/0nbi0p8gb167/2Qp99W4EBQK50cou66p3C8/62d40100207fbbaa07c883ce4ce66f9d/Padilla82_30.jpg",
-        "https://images.ctfassets.net/0nbi0p8gb167/7wy9qsuW6JinPH8cT4iebt/46d1abc9ac4927cb3b76b93a2fc54bd8/Padilla82_18.jpg",
-        "https://images.ctfassets.net/0nbi0p8gb167/5ZD3V8xcgMiZliKOp72YUS/208582e2aaf343ae45e0b6cf0f87ab8d/Padilla82_44.jpg"
-      ],
-      "Barrio": "Salamanca",
-      "Property": {
-        "Title": "Padilla",
-        "Description": "Esta vivienda situada en la segunda planta de un edificio clasico, ha sido complemente rehabilitada, con calidad y estilo moderno para convertirla en un auténtico hogar familiar.\n La vivienda se distribuye en un hall de entrada, cocina abierta con acceso a un amplio salón-comedor con 2 balcones a la calle y aseo de invitados. La zona de noche cuenta con 3 amplios dormitorios en suite con sus armarios empotrados. El dormitorio principal es también exterior con otro balcón. Un trastero está asignado a este piso. La vivienda se vende amueblada.",
-        "Price": {
-          "Price": "1850000",
-          "Ibis": "0",
-          "Precio Comunidad": "0"
-        }
-      },
-      "Amentities": {
-        "AC": true,
-        "Heating": true,
-        "Rooftop": false,
-        "Furnished": true,
-        "Portero": true,
-        "Trastero": true,
-        "Elevator": true,
-        "Parking": true
-      },
-      "Characteristics": {
-        "Tipo de Propiedad": "Residencial",
-        "Area de Estar": "206",
-        "Dormitorios": "3",
-        "Baños": "3",
-        "Patios": "2",
-        "Balcones": "3"
-      },
-      "Habitaciones-Paginas": [
-        {
-          "Title": "Dormitorios y Baños",
-          "Description": "El piso dispone de 3 dormitorios en suite, el principal con\nacceso a un balcón.",
-          "Photos": [
-            "//images.ctfassets.net/0nbi0p8gb167/4Pzhanijyf3C2A9JfnvJtd/397d4cb65382e4f28ae015589f94dbae/Padilla82_01.jpg",
-            "//images.ctfassets.net/0nbi0p8gb167/1PM4dCZgJkVaeZrlb6fYz3/76cc524a4efdf5709387e013cf91ed7b/Padilla82_11.jpg",
-            "//images.ctfassets.net/0nbi0p8gb167/3k3GaiucgUWKXI8cpQgSsU/2bc59a530e26a1c98e9cd2579e43e30c/Padilla82_49.jpg",
-            "//images.ctfassets.net/0nbi0p8gb167/1hCTV8yRTjx6IeV2NzL2qv/904c15d3f56682cfad15b232e0869447/Padilla82_56.jpg",
-            "//images.ctfassets.net/0nbi0p8gb167/61t5y16iNUspDZFRYJtDBd/fd933fac46e4009bb07626d5d12e7660/Padilla82_68.jpg",
-            "//images.ctfassets.net/0nbi0p8gb167/1TCYpXfFt2Nn37LnujBvhE/6e8866450082916db94e30911ebb0d79/Padilla82_64.jpg",
-            "//images.ctfassets.net/0nbi0p8gb167/4zghZHNeSBapuUwLLKmQJc/f88efacf5a20e6cd33d3a15f17ba71fb/Padilla82_59.jpg"
           ]
         }
       ]

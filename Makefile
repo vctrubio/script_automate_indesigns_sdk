@@ -1,6 +1,5 @@
 all: prod
 
-
 prod: 
 	@echo 'hello man'
 	@osascript apple_script/run.scpt && node ./src/save-to-location.js
@@ -19,6 +18,8 @@ create:
 read:
 	@node ./src/js-read-write.js
 
+fetch:
+	@ts-node ./backend_only/backend-fetch.ts
 
 rmf:
 	rm -rf test-properties
