@@ -9,7 +9,8 @@ apple:
 	osascript apple_script/run.scpt
 
 save:
-	node ./src/save-to-location.js
+	@node ./src/save-to-location.js $(FILE)
+# Prevent Make from interpreting the argument as a target
 
 create:
 	@node ./src/js-create-dir.js

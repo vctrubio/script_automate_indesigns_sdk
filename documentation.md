@@ -24,7 +24,7 @@ Export Function = to execute and format the PropertyId [DIR]
 
 ## EXECUTION
 
-- read from contentful's API -> fetch properties
-- parse properties -> create indesign file (for easy UI modifications)
-- read from indesign to create pdf
+- create from contentful's API -> fetch properties (--make create)
+- parse properties -> create indesign file (for easy UI modifications) 
+- read from indesign to create pdf (--make save)
 - script to automate, single or multiple properties
