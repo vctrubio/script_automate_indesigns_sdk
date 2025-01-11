@@ -4,3 +4,4 @@ backend_only/node_modules
 .env
 fichas-stash
 test-properties
+PDFS-properties

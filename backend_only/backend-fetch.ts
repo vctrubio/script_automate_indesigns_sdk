@@ -64,7 +64,7 @@ async function writeToJson() {
     "properties": formattedProperties
   };
 
-  const outputDir = path.join(__dirname, '../data-json');
+  const outputDir = path.join(__dirname, '../json-data');
   const outputPath = path.join(outputDir, 'properties-data.json');
 
   // Ensure the directory exists
