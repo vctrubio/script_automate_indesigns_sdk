@@ -60,13 +60,11 @@ function processProperty(urlName) {
 }
 
 async function processPropertyWithInDesign(propertyData) {
-    const propertyUrl = propertyData['Property-Url'];
-
-    console.log('helooworld..............', propertyUrl);
+    const propertyUrl = propertyData['Property-Url']; //propertyUrl does not need sanitazion
 
     try {
         const { stdout, stderr } = await execPromise(
-            `osascript apple_script/noderunner.scpt "${propertyUrl.replace(/"/g, '\\"')}"`
+            `osascript apple_script/noderunner.scpt "${propertyUrl}"`
         );
 
         if (stderr) {
