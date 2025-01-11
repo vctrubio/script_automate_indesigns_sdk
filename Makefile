@@ -10,7 +10,8 @@ apple:
 
 save:
 	@node ./src/save-to-location.js $(FILE)
-# Prevent Make from interpreting the argument as a target
+
+new: create read
 
 create:
 	@node ./src/js-create-dir.js
