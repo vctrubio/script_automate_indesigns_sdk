@@ -29,7 +29,6 @@ function processProperty(urlName) {
     const propertyDir = path.join(dirPropertiesName, urlName);
     const jsonFilePath = path.join(propertyDir, JSON_FILENAME);
 
-    console.log('Processing property:', urlName);
     try {
         // Check if JSON file exists and is readable
         if (!fs.existsSync(jsonFilePath)) {
@@ -47,10 +46,7 @@ function processProperty(urlName) {
             return null;
         }
 
-        // Update image paths to be absolute
-        const imagesDir = path.join(propertyDir, 'images');
-        propertyData['Cover-Img'] = path.join(imagesDir, 'a.jpeg');
-        propertyData['Extra-Img'] = path.join(imagesDir, 'b.jpeg');
+        // Control image directory inside propertyData['Extra-Img']
         
         return propertyData;
     } catch (error) {
@@ -92,7 +88,7 @@ async function main() {
     let failCount = 0;
     const successfulProperties = [];
 
-    for (const dir of subdirs) {
+    for (const dir of subdirs.slice(0, 1)) {
         const propertyDir = path.join(dirPropertiesName, dir);
         const propertyData = processProperty(dir);
 
