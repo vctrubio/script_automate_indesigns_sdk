@@ -92,7 +92,7 @@ async function main() {
     let failCount = 0;
     const successfulProperties = [];
 
-    for (const dir of subdirs.slice(0, 2)) {
+    for (const dir of subdirs.slice(0, 1)) {
         const propertyDir = path.join(dirPropertiesName, dir);
         const propertyData = processProperty(dir);
 

@@ -69,6 +69,35 @@ function getPropertyById(propertyUrl) {
     }
 }
 
+function getImagesFromDir(propertyDir) {
+    const imageDir = new Folder(propertyDir + "/images");
+    var images = [];
+
+    if (imageDir.exists) {
+        var files = imageDir.getFiles();
+        for (var i = 0; i < files.length; i++) {
+            var file = files[i];
+            images.push(file.fsName);
+            // if (file instanceof File) {
+            //     var ext = file.name.split('.').pop().toLowerCase();
+            //     if (ext === "jpg" || ext === "jpeg" || ext === "png") {
+            //         var firstChar = file.name.charAt(0).toLowerCase();
+            //         if (firstChar >= 'a' && firstChar <= 'f') {
+            //             images.push(file);
+            //         }
+            //     }
+            // }
+        }
+    } else {
+        alert("Image directory not found: " + imageDir.fsName);
+        var TMP_IMG = "~/Desktop/x-photos/a.jpeg";
+        images.push(TMP_IMG);
+        var TMP_IMG = "~/Desktop/x-photos/b.jpeg";
+        images.push(TMP_IMG);
+    }
+    return images;
+}
+
 function getPropertyByIdV2(propertyDir, jsonFile) {
     try {
         const propertyJsonFile = File(propertyDir + jsonFile)
@@ -81,13 +110,11 @@ function getPropertyByIdV2(propertyDir, jsonFile) {
 
         // Parse the JSON string into an actual object
         var propertyData = parseJSON(jsonString);
-
-        const TMP_IMG = "~/Desktop/x-photos/a.jpeg";
         return {
             "{{Property-Url}}": propertyData.propertyUrl,
             "{{Title}}": propertyData.Property.Title,
-            "{{Cover-Img}}": TMP_IMG,
-            "{{Extra-Img}}": TMP_IMG,
+            "{{Cover-Img}}": getImagesFromDir(propertyDir)[0],
+            "{{Extra-Img}}": getImagesFromDir(propertyDir)[1],
             "{{Amentities}}": propertyData.Amentities || {},
             "{{Description}}": propertyData.Property.Description,
             "{{Characteristics}}": propertyData.Characteristics,
@@ -95,7 +122,7 @@ function getPropertyByIdV2(propertyDir, jsonFile) {
             "{{Ibis-Mas}}": formatIbis(propertyData.Property.Price.Ibis),
             "{{Property-Url}}": propertyData["Property-Url"]
         }
-
+        exit(1)
     } catch (e) {
         alert("Error reading or parsing properties file: " + e.message);
         return null;
