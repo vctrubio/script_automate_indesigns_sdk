@@ -24,7 +24,15 @@ Export Function = to execute and format the PropertyId [DIR]
 
 ## EXECUTION
 
-- create from contentful's API -> fetch properties (--make create)
-- parse properties -> create indesign file (for easy UI modifications) 
-- read from indesign to create pdf (--make save)
+- create from contentful's API -> fetch properties
+- parse properties -> create indesign file (for easy UI modifications)
+- read from indesign to create pdf
 - script to automate, single or multiple properties
+
+## MAKE CMDS
+
+- prod | the ultimate production cmd
+- apple | predfined osascript run
+- save | save script to indesign dir for use
+- create | create directories from contentfus API JSON Request
+- read | execute the pdfs and indesign's from (create's directory)
