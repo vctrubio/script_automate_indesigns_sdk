@@ -1,6 +1,7 @@
 const https = require('https');
 const fs = require('fs');
 const prompt = require('prompt-sync')();
+const path = require('path');
 
 const ROOT_DIR = __dirname + '/../';
 
@@ -8,6 +9,7 @@ const NAME = 'JSON-Fetch-Contentful.json' // for forward compatibility
 const jsonFilePath = ROOT_DIR + 'json-data/properties-data.json' // Make sure exist
 
 const dirPropertiesName = 'test-properties/'; //where to pout the property dir information
+const relativePath = path.join(__dirname, '..', dirPropertiesName);
 
 /*
 {
@@ -32,12 +34,17 @@ ROOT_DIR/properties/property-url/files,dir
 file1: property-json
 dir1: Images- property image download folder - for uplodaing to indesign
 */
-function createDir(dirName) {
+function createDir() {
     const jsonObject = getJsonType(jsonFilePath);
 
+    //relative to makefile cmd
+    
     try {
-        if (!fs.existsSync(`../${dirName}`)) {
-            fs.mkdirSync(`../${dirName}`);
+        if (!fs.existsSync(relativePath)) {
+            fs.mkdirSync(relativePath);
+            console.log(`\x1b[32m%s\x1b[0m`, `SUCCESS: ${relativePath} created`);
+        } else {
+            console.log(`\x1b[33m%s\x1b[0m`, `WARNING: ${relativePath} already exists`);
         }
 
         var skip = 0;
@@ -45,31 +52,30 @@ function createDir(dirName) {
         for (let i = 0; i < jsonObject.properties.length; i++) {
             const property = jsonObject.properties[i];
             const property_url = property['Property-Url']
-            const propertyDir = `${dirName}${property_url}`;
+            const propertyDir = path.join(relativePath, property_url);
 
-            if (!fs.existsSync(`../${propertyDir}`)) {
-                fs.mkdirSync(`../${propertyDir}`);
+            if (!fs.existsSync(propertyDir)) {
+                fs.mkdirSync(propertyDir);
             } else {
                 if (skip > 0) continue;
                 console.log(`\x1b[33m%s\x1b[0m`, `WARNING: ${propertyDir} already exists`);
                 const response = prompt('Directory already exists. Do you want to overwrite it? (y/n/q/c): ');
 
                 if (response.toLowerCase() === 'y') {
-                    console.log(`Property ${property_url}: overwritten sxuccessfully!`);
+                    console.log(`Property ${property_url}: overwritten successfully!`);
                 } else if (response.toLowerCase() === 'q') {
                     console.log('\x1b[30m%s\x1b[0m', `Safe exit. Property ${property_url} not overwritten.`);
                     return
                 } else if (response.toLowerCase() === 'n') {
                     console.log('\x1b[30m%s\x1b[0m', `Property ${property_url}: without changes.`);
                     continue
-                }
-                else if (response.toLowerCase() === 'c') {
+                } else if (response.toLowerCase() === 'c') {
                     skip++;
                     console.log(`Continuing... `);
                 }
             }
 
-            const filePath = `../${propertyDir}/${NAME}`;
+            const filePath = path.join(propertyDir, NAME);
             const propertyJson = JSON.stringify(property);
             if (fs.existsSync(filePath)) {
                 fs.unlinkSync(filePath); // Delete the existing file
@@ -110,14 +116,13 @@ async function firePropertyImageDir(jsonObject) {
 
     console.log('\x1b[34m%s\x1b[0m', 'firePropertiesImages :PITSTOP:')
     try {
-
         let skipFlag = 0
         for (const propertyUrl of propertyUrls) {
-            const propertyDir = `${dirPropertiesName}${propertyUrl}`;
-            const photoDir = `../${propertyDir}/images`;
+            const propertyDir = path.join(relativePath, propertyUrl);
+            const photoDir = path.join(propertyDir, 'images');
 
-            if (!fs.existsSync(`${photoDir}`)) {
-                fs.mkdirSync(`${photoDir}`);
+            if (!fs.existsSync(photoDir)) {
+                fs.mkdirSync(photoDir);
                 console.log(`\x1b[32m%s\x1b[0m`, `SUCCESS: ${photoDir} created`);
             } else {
                 console.log(`\x1b[33m%s\x1b[0m`, `WARNING: ${photoDir} already exists`);
@@ -174,7 +179,7 @@ async function firePropertyImageDir(jsonObject) {
     } catch {
         console.error('Error in firePropertyImageDir function');
     }
-    console.log(`\x1b[32m%s\x1b[0m`, `firedPropertyImages`);
+    console.log(`\x1b[32m%s\x1b[0m`, `firedPropertyImages complete....`);
 }
 
 function downloadImage(url, outputPath) {
@@ -197,10 +202,10 @@ function downloadImage(url, outputPath) {
 }
 
 function main() {
-    jsonObject = getJsonType(jsonFilePath);
-    createDir(dirPropertiesName);
+    const jsonObject = getJsonType(jsonFilePath);
+    createDir();
     firePropertyImageDir(jsonObject);
 }
 
 //node ./js-create-dir.js 
-main()
+main();

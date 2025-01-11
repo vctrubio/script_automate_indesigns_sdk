@@ -21,4 +21,4 @@ read:
 
 
 rmf:
-	rm fichas-stash/*
+	rm -rf test-properties
