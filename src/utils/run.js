@@ -76,6 +76,7 @@ function processImages(page, placeholderValues) {
         if (!imagePath) continue;
 
         if (imagePath.indexOf('//images.ctfassets.net/') !== -1) {
+            alert("Downloading image from the internet. This may take a while.");
             var tempFile = new File(CONFIG.DIR_PATH + '/' + rectangle.label.replace(/[{}]/g, '') + '.jpg');
             if (downloadImage(imagePath, tempFile.fsName)) {
                 rectangle.place(tempFile);
@@ -153,7 +154,7 @@ function saveAndCloseDocument(doc, propertyUrl) {
 function run(jsonTemplateFile, fileValues) {
     var doc = app.open(jsonTemplateFile);
     processDocument(doc, fileValues);
-    saveAndCloseDocument(doc, fileValues["{{Title}}"]);
+    saveAndCloseDocument(doc, fileValues["{{Property-Url}}"]);
 }
 
 function runv2(jsonTemplateFile, property, propertyDir) {

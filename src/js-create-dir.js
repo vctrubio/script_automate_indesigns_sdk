@@ -1,9 +1,13 @@
 const https = require('https');
 const fs = require('fs');
 const prompt = require('prompt-sync')();
-const { dirPropertiesName, JSON_FILENAME, imageDir } = require('./utils/nodeConfig');
 
-const jsonFilePath = 'json-data/properties-data.json' // Make sure exist
+const ROOT_DIR = __dirname + '/../';
+
+const NAME = 'JSON-Fetch-Contentful.json' // for forward compatibility
+const jsonFilePath = ROOT_DIR + 'json-data/properties-data.json' // Make sure exist
+
+const dirPropertiesName = 'test-properties/'; //where to pout the property dir information
 
 /*
 {
@@ -24,16 +28,16 @@ function getJsonType(jsonFilePath) {
 
 /*
 create dir and place property by propertyIdDir - read the documenation.md
-ROOT_DIR/dirPropertiesName/property-url/files,dir
-file1: JSON_FILENAME
+ROOT_DIR/properties/property-url/files,dir
+file1: property-json
 dir1: Images- property image download folder - for uplodaing to indesign
 */
-function createDir(dirName = dirPropertiesName) {
+function createDir(dirName) {
     const jsonObject = getJsonType(jsonFilePath);
 
     try {
-        if (!fs.existsSync(`${dirName}`)) {
-            fs.mkdirSync(`${dirName}`);
+        if (!fs.existsSync(`../${dirName}`)) {
+            fs.mkdirSync(`../${dirName}`);
         }
 
         var skip = 0;
@@ -43,8 +47,8 @@ function createDir(dirName = dirPropertiesName) {
             const property_url = property['Property-Url']
             const propertyDir = `${dirName}${property_url}`;
 
-            if (!fs.existsSync(`${propertyDir}`)) {
-                fs.mkdirSync(`${propertyDir}`);
+            if (!fs.existsSync(`../${propertyDir}`)) {
+                fs.mkdirSync(`../${propertyDir}`);
             } else {
                 if (skip > 0) continue;
                 console.log(`\x1b[33m%s\x1b[0m`, `WARNING: ${propertyDir} already exists`);
@@ -65,7 +69,7 @@ function createDir(dirName = dirPropertiesName) {
                 }
             }
 
-            const filePath = `${propertyDir}/${JSON_FILENAME}`;
+            const filePath = `../${propertyDir}/${NAME}`;
             const propertyJson = JSON.stringify(property);
             if (fs.existsSync(filePath)) {
                 fs.unlinkSync(filePath); // Delete the existing file
@@ -110,7 +114,7 @@ async function firePropertyImageDir(jsonObject) {
         let skipFlag = 0
         for (const propertyUrl of propertyUrls) {
             const propertyDir = `${dirPropertiesName}${propertyUrl}`;
-            const photoDir = `${propertyDir}${imageDir}`;
+            const photoDir = `../${propertyDir}/images`;
 
             if (!fs.existsSync(`${photoDir}`)) {
                 fs.mkdirSync(`${photoDir}`);
@@ -140,7 +144,7 @@ async function firePropertyImageDir(jsonObject) {
             let letter = 'a'.charCodeAt(0);
             let skip = 0;
 
-            console.log('\x1b[34m%s\x1b[0m', ' createImgaes :PITSTOP:', propertyDir)
+            console.log('\x1b[34m%s\x1b[0m', ' createImgaes :PITSTOP:')
             for (const img of getImages) {
                 if (skip > 0) continue
                 const letterTransform = String.fromCharCode(letter);
@@ -194,7 +198,7 @@ function downloadImage(url, outputPath) {
 
 function main() {
     jsonObject = getJsonType(jsonFilePath);
-    createDir();
+    createDir(dirPropertiesName);
     firePropertyImageDir(jsonObject);
 }
 
