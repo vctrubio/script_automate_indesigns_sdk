@@ -26,7 +26,7 @@ function parseJSON(jsonString) {
     }
 }
 
-// Main function to export
+//old n unused
 function getPropertyById(propertyUrl) {
     if (!CONFIG.JSON_FILE_PATH.exists) {
         alert("JSON file not found: " + CONFIG.JSON_FILE_PATH.fsName);
@@ -57,7 +57,7 @@ function getPropertyById(propertyUrl) {
                     "{{Characteristics}}": property.Characteristics,
                     "{{Precio}}": formatPrice(property.Property.Price.Price),
                     "{{Ibis-Mas}}": formatIbis(property.Property.Price.Ibis),
-                    "{{Property-Url}}": property["Property-Url"]
+                    "{{Property-Url}}": property.propertyUrl
                 };
             }
         }
@@ -78,18 +78,28 @@ function getImagesFromDir(propertyDir) {
         for (var i = 0; i < files.length; i++) {
             var file = files[i];
             images.push(file.fsName);
-
         }
-    } else {
-        alert("Image directory not found: " + imageDir.fsName);
+    }
+    else {
+        alert("No images found in directory: " + imageDir.fsName);
+    }
+
+    if (images.length > 0) {
+        images.sort();
+    }
+    else {
         var TMP_IMG = "~/Desktop/x-photos/a.jpeg";
         images.push(TMP_IMG);
         var TMP_IMG = "~/Desktop/x-photos/b.jpeg";
         images.push(TMP_IMG);
     }
 
-    images.sort();
     return images;
+    /*
+    osascript apple_script/noderunner.scpt "argonsola"
+    Error running script: Uncaught JavaScript exception: Unable to read JPEG.
+    error: Uncaught JavaScript exception: Unable to read JPEG.
+    */
 }
 
 function getPropertyByIdV2(propertyDir, jsonFile) {
@@ -102,13 +112,13 @@ function getPropertyByIdV2(propertyDir, jsonFile) {
         if (!jsonString)
             throw new Error("Invalid READ_JSON_FILE_NAME data");
 
-        // Parse the JSON string into an actual object
         var propertyData = parseJSON(jsonString);
+        const images = getImagesFromDir(propertyDir);
         return {
             "{{Property-Url}}": propertyData.propertyUrl,
             "{{Title}}": propertyData.Property.Title,
-            "{{Cover-Img}}": getImagesFromDir(propertyDir)[0],
-            "{{Extra-Img}}": getImagesFromDir(propertyDir)[1],
+            "{{Cover-Img}}": images[0],
+            "{{Extra-Img}}": images[1],
             "{{Amentities}}": propertyData.Amentities || {},
             "{{Description}}": propertyData.Property.Description,
             "{{Characteristics}}": propertyData.Characteristics,

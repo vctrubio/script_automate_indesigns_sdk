@@ -8,7 +8,6 @@ const READ_JSON_FILE_NAME = 'JSON-Fetch-Contentful.json'
 
 function main() {
     if (typeof propertyUrl !== 'undefined') {
-        // alert("Processing property: " + filePath); // Temporary for debugging
         const FILE_PATH = File(MAKEFILE_DIR + TEMPLATE_INDESIGN_FILE)
         app.open(FILE_PATH)
         const propertyDir = (ROOT_PROPERTY_DIR + propertyUrl + '/');
