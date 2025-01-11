@@ -78,15 +78,7 @@ function getImagesFromDir(propertyDir) {
         for (var i = 0; i < files.length; i++) {
             var file = files[i];
             images.push(file.fsName);
-            // if (file instanceof File) {
-            //     var ext = file.name.split('.').pop().toLowerCase();
-            //     if (ext === "jpg" || ext === "jpeg" || ext === "png") {
-            //         var firstChar = file.name.charAt(0).toLowerCase();
-            //         if (firstChar >= 'a' && firstChar <= 'f') {
-            //             images.push(file);
-            //         }
-            //     }
-            // }
+
         }
     } else {
         alert("Image directory not found: " + imageDir.fsName);
@@ -95,6 +87,8 @@ function getImagesFromDir(propertyDir) {
         var TMP_IMG = "~/Desktop/x-photos/b.jpeg";
         images.push(TMP_IMG);
     }
+
+    images.sort();
     return images;
 }
 
