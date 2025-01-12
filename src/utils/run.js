@@ -125,15 +125,10 @@ function processDocument(doc, placeholderValues) {
 function saveAndCloseDocument(doc, propertyUrl) {
     const propertyDir = '~/Desktop/indesign_script/test-properties/' + propertyUrl + '/'
 
-    // Save InDesign file
     var outputFilePath = propertyDir + propertyUrl + ".indd";
-    
-    // const outputFilePath = tmpDir + ".indd"
     doc.save(new File(outputFilePath));
 
-    // Export PDF
     var pdfPath = propertyDir + propertyUrl + ".pdf";
-    // const pdfPath = tmpDir + '.pdf'
     var pdfFile = new File(pdfPath);
 
     // PDF export preferences
@@ -142,12 +137,8 @@ function saveAndCloseDocument(doc, propertyUrl) {
         pdfPreset = app.pdfExportPresets[0]; // Use default preset if High Quality not found
     }
 
-    // Export the PDF
     doc.exportFile(ExportFormat.PDF_TYPE, pdfFile, false, pdfPreset);
-
-    // Close the document
     doc.close(SaveOptions.NO);
-    // alert("Files saved:\nInDesign: " + propertyDir);
 }
 
 
