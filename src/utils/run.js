@@ -7,7 +7,10 @@ function createCharacteristicsTable(page, textFrame, characteristics) {
     for (var key in characteristics) {
         if (characteristics.hasOwnProperty(key)) {
             keys.push(key);
-            values.push(characteristics[key]);
+            if (key === 'Area de Estar')
+                values.push(characteristics[key] + ' m²');
+            else
+                values.push(characteristics[key]);
         }
     }
 
@@ -65,28 +68,38 @@ function processImages(page, placeholderValues) {
         var rectangle = page.rectangles[k];
         if (!rectangle.label) continue;
 
-        var imagePath = '';
-        if (rectangle.label === "{{Cover-Img}}") {
-            imagePath = placeholderValues["{{Cover-Img}}"];
-        } else if (rectangle.label === "{{Index-Cover-Img-First}}" ||
-            rectangle.label === "{{Index-Cover-Img-Second}}") {
-            imagePath = placeholderValues["{{Extra-Img}}"];
-        }
-
-        if (!imagePath) continue;
-
-        if (imagePath.indexOf('//images.ctfassets.net/') !== -1) {
-            alert("Downloading image from the internet. This may take a while.");
-            var tempFile = new File(CONFIG.DIR_PATH + '/' + rectangle.label.replace(/[{}]/g, '') + '.jpg');
-            if (downloadImage(imagePath, tempFile.fsName)) {
-                rectangle.place(tempFile);
-                styleImage(rectangle);
-                tempFile.remove();
-            }
-        } else {
+        var imagePath = placeholderValues['Images'][k]
+        if (imagePath) {
             rectangle.place(File(imagePath));
             styleImage(rectangle);
         }
+
+        //OLD WAY
+        // if (rectangle.label === "{{Cover-Img}}") {
+        //     imagePath = placeholderValues["{{Cover-Img}}"];
+        // } else if (rectangle.label === "{{Index-Cover-Img-First}}" ||
+        //     rectangle.label === "{{Index-Cover-Img-Second}}") {
+        //     imagePath = placeholderValues["{{Extra-Img}}"];
+        // }
+
+        // if (!imagePath) continue;
+
+        // if (imagePath.indexOf('//images.ctfassets.net/') !== -1) {
+        //     alert("Downloading image from the internet. This may take a while.");
+        //     var tempFile = new File(CONFIG.DIR_PATH + '/' + rectangle.label.replace(/[{}]/g, '') + '.jpg');
+        //     if (downloadImage(imagePath, tempFile.fsName)) {
+        //         rectangle.place(tempFile);
+        //         styleImage(rectangle);
+        //         tempFile.remove();
+        //     }
+        // } 
+        // else {
+        //     rectangle.place(File(imagePath));
+        //     styleImage(rectangle);
+        // }
+
+
+
     }
 }
 
@@ -100,7 +113,7 @@ function processTextFrames(page, placeholderValues) {
                 if (frameText.indexOf(placeholder) === -1) continue;
 
                 if (placeholder === "{{Amentities}}") {
-                    createAmenitiesTable(page, textFrame, placeholderValues[placeholder]);
+                    // createAmenitiesTable(page, textFrame, placeholderValues[placeholder]);
                     frameText = frameText.replace(placeholder, "");
                 } else if (placeholder === "{{Characteristics}}") {
                     createCharacteristicsTable(page, textFrame, placeholderValues[placeholder]);

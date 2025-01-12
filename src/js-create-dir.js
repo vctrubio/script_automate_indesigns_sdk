@@ -160,8 +160,7 @@ async function firePropertyImageDir(jsonObject) {
                     const response = prompt(`File ${path} already exists. Do you want to overwrite it? (y/n/q/c): `);
 
                     if (response.toLowerCase() === 'y') {
-                        console.log(`File ${path}: overwritten successfully!`);
-                    } else if (response.toLowerCase() === 'q') {
+                        console.log(`File ${path}: overwritten successfully!`); } else if (response.toLowerCase() === 'q') {
                         console.log('\x1b[30m%s\x1b[0m', `Safe exit. File ${path} not overwritten.`);
                         return;
                     } else if (response.toLowerCase() === 'n') {

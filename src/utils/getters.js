@@ -119,6 +119,7 @@ function getPropertyByIdV2(propertyDir, jsonFile) {
             "{{Title}}": propertyData.Property.Title,
             "{{Cover-Img}}": images[0],
             "{{Extra-Img}}": images[1],
+            "Images": images,
             "{{Amentities}}": propertyData.Amentities || {},
             "{{Description}}": propertyData.Property.Description,
             "{{Characteristics}}": propertyData.Characteristics,
